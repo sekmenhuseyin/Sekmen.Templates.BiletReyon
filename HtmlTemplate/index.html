@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="humans.txt" />
+    <title>Bilet Reyon</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+    <header></header>
+    <section class="subscribe">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="pull-left giftIcon" src="/assets/images/gift.png" alt="">
+                    <p class="text">
+                        <span>İNDİRİM VE PROMOSYONLARDAN</span><br>
+                        ANINDA HABERDAR OLMAK İSTER MİSİNİZ?
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <form class="searchBottomArea">
+                        <input type="text" name="Email" placeholder="E-Mail Adresiniz..." aria-label="Search"
+                            class="form-control">
+                        <button class="btn my-2 my-sm-0">ABONE OL</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="banner">
+        <div class="container">
+            <form action="/SearchResult" method="get" id="mainSearch">
+                <div class="ticketBg ticketFilterArea">
+                    <div class="ticketBgTop"></div>
+                    <ul class="nav flyType">
+                        <li class="active one">Tek Yön</li>
+                        <li class="two">Gidiş Dönüş</li>
+                    </ul>
+                    <div class="row position-relative">
+                        <span class="icon icon-change"></span>
+                        <div class="col mobileFull">
+                            <div class="searchInput">
+                                <span class="icon icon-plane"></span>
+                                <span class="title">NEREDEN</span>
+                                <input autocomplete="off" class="input" id="first-place" type="text" name="DepartureName" placeholder="Şehir, Havalimanı" required="required">
+                                <input autocomplete="off" id="first-place-hidden" type="hidden" name="Departure" required="required">
+                            </div>
+                        </div>
+                        <div class="col mobileFull">
+                            <div class="searchInput">
+                                <span class="icon icon-plane2"></span>
+                                <span class="title">NEREYE</span>
+                                <input autocomplete="off" class="input" id="second-place" type="text" name="ArrivalName" placeholder="Şehir, Havalimanı" required="required">
+                                <input autocomplete="off" id="second-place-hidden" readonly="" type="hidden" name="Arrival" required="required">
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col mobileFull">
+                            <div class="searchInput">
+                                <span class="icon icon-calendar"></span>
+                                <span class="title">GİDİŞ TARİHİ</span>
+                                <input autocomplete="off" class="input hasDatepicker" id="first-date" type="text" name="DepartureDate" placeholder="Tarih Seçiniz" required="required">
+                            </div>
+                        </div>
+                        <div class="col dateTwo mobileFull" style="display: none;">
+                            <div class="searchInput">
+                                <span class="icon icon-calendar"></span>
+                                <span class="title">DÖNÜŞ TARİHİ</span>
+                                <input autocomplete="off" class="input hasDatepicker" id="second-date" type="text" name="ArrivalDate" placeholder="Tarih Seçiniz">
+                            </div>
+                        </div>
+                        <div class="w-100" style="display: none;"></div>
+                        <div class="col mobileFull">
+                            <div class="searchInput passengerSelect mar-b-2">
+                                <span class="icon icon-man"></span>
+                                <span class="title">YOLCU SEÇİMİ</span>
+                                <input autocomplete="off" class="input" type="text" placeholder="1 Yolcu, Ekonomik" readonly="">
+                            </div>
+                            <div class="passengerArea" style="display: none;">
+                                <table>
+                                    <tbody><tr>
+                                        <td>Yetişkin</td>
+                                        <td>
+                                            <div class="countInputArea">
+                                                <a href="javascript:;" class="minus">-</a>
+                                                <input autocomplete="off" class="countInput" name="AdultCount" type="number" value="1" min="1" max="999">
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Çocuk<span>(2-12 Yaş)</span></td>
+                                        <td>
+                                            <div class="countInputArea">
+                                                <a href="javascript:;" class="minus">-</a>
+                                                <input autocomplete="off" class="countInput" name="ChildCount" type="number" value="0" min="0" max="999">
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bebek<span>(0-2 Yaş)</span></td>
+                                        <td>
+                                            <div class="countInputArea">
+                                                <a href="javascript:;" class="minus">-</a>
+                                                <input autocomplete="off" class="countInput" name="InfantCount" type="number" value="0" min="0" max="999">
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <select class="flyClass" name="PreferedClass">
+                                                <option value="0">Tüm Sınıflar</option>
+                                                <option value="1">İndirimli</option>
+                                                <option value="2">Ekonomi</option>
+                                                <option value="3">Business</option>
+                                                <option value="4">First Class</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                <a class="passengerBtn" href="javascript:;">Tamam</a>
+                            </div>
+                        </div>
+                        <div class="col last-col" style="display: none;"></div>
+                    </div>
+                    <div class="searchBtnCon">
+                        <button class="btn btn-block searchBtn">EN UCUZ UÇAK BİLETLERİNİ BUL</button>
+                    </div>
+                    <div class="ticketBgbottom"></div>
+                </div>
+            </form>
+            <a href="#" class="bannerArow">
+                <span class="icon icon-longarrow"></span>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footerMenu row">
+                <div class="col-md-3">
+                    <p class="title">Havayolu Firmaları</p>
+                    <ul class="vertical">
+                        <li><a href="/pegasus-iletisim" title="Pegasus İletişim">Pegasus İletişim</a></li>
+                        <li><a href="/thy-iletisim" title="THY İletişim">Türk Hava Yolları İletişim</a></li>
+                        <li><a href="/anadolu-jet-iletisim" title="Anadolu Jet İletişim">Anadolu Jet İletişim</a></li>
+                        <li><a href="/sunexpress-iletisim" title="SunExpress İletişim">SunExpress İletişim</a></li>
+                    </ul>
+                    <hr>
+                </div>
+                <div class="col-md-3">
+                    <p class="title">Firmamız Hakkında</p>
+                    <ul class="vertical">
+                        <li><a href="/kullanim-sartlari" title="Kullanım Şartları">Kullanım Şartları</a></li>
+                        <li><a href="/gizlilik-sozlesmesi" title="Gizlilik Sözleşmesi">Gizlilik Sözleşmesi</a></li>
+                        <li><a href="/satis-sonrasi-hizmetler" title="Satis Sonrasi Hizmetler">Satış Sonrası
+                                Hizmetler</a></li>
+                        <li><a href="/hizmet-sozlesmesi" title="Hizmet Sözleşmesi">Hizmet Sözleşmesi</a></li>
+                        <li><a href="/iptal-iade-sartlari" title="İptal-İade Şartları">İptal &amp; İade Şartları</a>
+                        </li>
+                        <li><a href="/islem-rehberi" title="İşlem Rehberi">İşlem Rehberi</a></li>
+                        <li><a href="/cerez-politikasi" title="Çerez Politikası">Çerez Politikası</a></li>
+                    </ul>
+                    <hr>
+                </div>
+                <div class="col-md-3">
+                    <p class="title">Popüler Şehirler</p>
+                    <hr>
+                </div>
+                <div class="col-md-3">
+                    <p class="title active">Yardım &amp; Destek</p>
+                    <ul class="vertical">
+                        <li>
+                            <div id="ETBIS">
+                                <div id="7312e3fdc91d4c009a9042e7c79f874d"><a
+                                        href="https://etbis.eticaret.gov.tr/sitedogrulama/7312e3fdc91d4c009a9042e7c79f874d"
+                                        target="_blank"><img style="width:100px; height:120px"></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://www.guvendamgasi.org.tr/firmadetay.php?Guid=542ee4ef-5dff-11ea-8718-48df373f4850"
+                                target="_blank"><img src="https://www.guvendamgasi.org.tr/_logo_js/img/aldi.png"
+                                    id="guvendamgasi" width="100" alt="Güvenilir Site" title="04.08.2020"></a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+        <div class="footerBottom">
+            <a href="#" class="footerArrow">
+                <span class="icon icon-longarrow"></span>
+            </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="pull-left" src="/assets/images/logo.png" alt="">
+                        <span class="copyright">COPYRIGHT - 2020 | TÜM HAKLARI SAKLIDIR.</span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pull-right mar-l-30">
+                            <ul class="horizontal social pull-right">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pull-right line hMobile">&nbsp;</div>
+
+                        <div class="pull-right mar-r-30 hMobile">
+                            <span class="footerNumber">
+                                <span class="icon icon-phone"></span>(0850) 303 07 87</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

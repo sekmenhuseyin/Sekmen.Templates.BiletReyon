@@ -1,0 +1,8 @@
+/* COMPANY */
+Sekmen.Dev
+/* TEAM */
+Hüseyin Sekmenoğlu
+/* SITE */
+Name: Bilet Reyon
+Language: Multilanguigal
+Web: biletreyon.com
