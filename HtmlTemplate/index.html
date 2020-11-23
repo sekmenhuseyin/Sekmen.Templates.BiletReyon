@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,6 +12,13 @@
     <meta name="author" content="humans.txt" />
     <title>Bilet Reyon</title>
     <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha384-kcNNzf7wI8//ZkNUaDd5JwxLoFaBgkj9Z4O4NwtuX9Lkmsz0HoITOxJsGkYxDuyG" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" integrity="sha384-O1hPCzrpXngZMErIjr+H0eOvTf1GKeN4n8CAAgeGgNT8SmQot8u0Zf7V9ipByhSi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" integrity="sha384-iC8v6aqYfKyFWSrStYfmqfKKxkUD/zWxkVY9AcKrKDZY0NWW+G4eOf31STkCR8ya" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha384-VK/ia2DWrvtO05YDcbWI8WE3WciOH0RhfPNuRJGSa3dpAs5szXWQuCnPNv/yzpO4" crossorigin="anonymous">
+    <link href="assets/css/style.min.css" rel="stylesheet" />
 </head>
 <body>
     <header></header>
@@ -28,7 +35,7 @@
                 <div class="col-md-6">
                     <form class="searchBottomArea">
                         <input type="text" name="Email" placeholder="E-Mail Adresiniz..." aria-label="Search"
-                            class="form-control">
+                               class="form-control">
                         <button class="btn my-2 my-sm-0">ABONE OL</button>
                     </form>
                 </div>
@@ -86,48 +93,50 @@
                             </div>
                             <div class="passengerArea" style="display: none;">
                                 <table>
-                                    <tbody><tr>
-                                        <td>Yetişkin</td>
-                                        <td>
-                                            <div class="countInputArea">
-                                                <a href="javascript:;" class="minus">-</a>
-                                                <input autocomplete="off" class="countInput" name="AdultCount" type="number" value="1" min="1" max="999">
-                                                <a href="javascript:;" class="plus">+</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Çocuk<span>(2-12 Yaş)</span></td>
-                                        <td>
-                                            <div class="countInputArea">
-                                                <a href="javascript:;" class="minus">-</a>
-                                                <input autocomplete="off" class="countInput" name="ChildCount" type="number" value="0" min="0" max="999">
-                                                <a href="javascript:;" class="plus">+</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bebek<span>(0-2 Yaş)</span></td>
-                                        <td>
-                                            <div class="countInputArea">
-                                                <a href="javascript:;" class="minus">-</a>
-                                                <input autocomplete="off" class="countInput" name="InfantCount" type="number" value="0" min="0" max="999">
-                                                <a href="javascript:;" class="plus">+</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <select class="flyClass" name="PreferedClass">
-                                                <option value="0">Tüm Sınıflar</option>
-                                                <option value="1">İndirimli</option>
-                                                <option value="2">Ekonomi</option>
-                                                <option value="3">Business</option>
-                                                <option value="4">First Class</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody></table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Yetişkin</td>
+                                            <td>
+                                                <div class="countInputArea">
+                                                    <a href="javascript:;" class="minus">-</a>
+                                                    <input autocomplete="off" class="countInput" name="AdultCount" type="number" value="1" min="1" max="999">
+                                                    <a href="javascript:;" class="plus">+</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Çocuk<span>(2-12 Yaş)</span></td>
+                                            <td>
+                                                <div class="countInputArea">
+                                                    <a href="javascript:;" class="minus">-</a>
+                                                    <input autocomplete="off" class="countInput" name="ChildCount" type="number" value="0" min="0" max="999">
+                                                    <a href="javascript:;" class="plus">+</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bebek<span>(0-2 Yaş)</span></td>
+                                            <td>
+                                                <div class="countInputArea">
+                                                    <a href="javascript:;" class="minus">-</a>
+                                                    <input autocomplete="off" class="countInput" name="InfantCount" type="number" value="0" min="0" max="999">
+                                                    <a href="javascript:;" class="plus">+</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <select class="flyClass" name="PreferedClass">
+                                                    <option value="0">Tüm Sınıflar</option>
+                                                    <option value="1">İndirimli</option>
+                                                    <option value="2">Ekonomi</option>
+                                                    <option value="3">Business</option>
+                                                    <option value="4">First Class</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <a class="passengerBtn" href="javascript:;">Tamam</a>
                             </div>
                         </div>
@@ -162,10 +171,15 @@
                     <ul class="vertical">
                         <li><a href="/kullanim-sartlari" title="Kullanım Şartları">Kullanım Şartları</a></li>
                         <li><a href="/gizlilik-sozlesmesi" title="Gizlilik Sözleşmesi">Gizlilik Sözleşmesi</a></li>
-                        <li><a href="/satis-sonrasi-hizmetler" title="Satis Sonrasi Hizmetler">Satış Sonrası
-                                Hizmetler</a></li>
+                        <li>
+                            <a href="/satis-sonrasi-hizmetler" title="Satis Sonrasi Hizmetler">
+                                Satış Sonrası
+                                Hizmetler
+                            </a>
+                        </li>
                         <li><a href="/hizmet-sozlesmesi" title="Hizmet Sözleşmesi">Hizmet Sözleşmesi</a></li>
-                        <li><a href="/iptal-iade-sartlari" title="İptal-İade Şartları">İptal &amp; İade Şartları</a>
+                        <li>
+                            <a href="/iptal-iade-sartlari" title="İptal-İade Şartları">İptal &amp; İade Şartları</a>
                         </li>
                         <li><a href="/islem-rehberi" title="İşlem Rehberi">İşlem Rehberi</a></li>
                         <li><a href="/cerez-politikasi" title="Çerez Politikası">Çerez Politikası</a></li>
@@ -181,16 +195,18 @@
                     <ul class="vertical">
                         <li>
                             <div id="ETBIS">
-                                <div id="7312e3fdc91d4c009a9042e7c79f874d"><a
-                                        href="https://etbis.eticaret.gov.tr/sitedogrulama/7312e3fdc91d4c009a9042e7c79f874d"
-                                        target="_blank"><img style="width:100px; height:120px"></a>
+                                <div id="7312e3fdc91d4c009a9042e7c79f874d">
+                                    <a href="https://etbis.eticaret.gov.tr/sitedogrulama/7312e3fdc91d4c009a9042e7c79f874d"
+                                       target="_blank"><img style="width:100px; height:120px"></a>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <a href="https://www.guvendamgasi.org.tr/firmadetay.php?Guid=542ee4ef-5dff-11ea-8718-48df373f4850"
-                                target="_blank"><img src="https://www.guvendamgasi.org.tr/_logo_js/img/aldi.png"
-                                    id="guvendamgasi" width="100" alt="Güvenilir Site" title="04.08.2020"></a>
+                               target="_blank">
+                                <img src="https://www.guvendamgasi.org.tr/_logo_js/img/aldi.png"
+                                     id="guvendamgasi" width="100" alt="Güvenilir Site" title="04.08.2020">
+                            </a>
                         </li>
                     </ul>
                     <hr>
@@ -222,13 +238,22 @@
 
                         <div class="pull-right mar-r-30 hMobile">
                             <span class="footerNumber">
-                                <span class="icon icon-phone"></span>(0850) 303 07 87</span>
+                                <span class="icon icon-phone"></span>(0850) 303 07 87
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha384-fYxN7HsDOBRo1wT/NSZ0LkoNlcXvpDpFy6WzB42LxuKAX7sBwgo7vuins+E1HCaw" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/tr.js" integrity="sha384-GT36YgQKCTcOn72Z84PoR+QM2VA5fPU5TTrHWHwUfGt30EZJEiNM1aa8sazYVk1e" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha384-l/y5WJTphApmSlx76Ev6k4G3zxu/+19CVvn9OTKI7gs4Yu5Hm8mjpdtdr5oyhnNo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js" integrity="sha384-Caig6D9a+KaR2EonbCuBJHm/oMYXm33Mmy4eBfBz8n9AEIUz01OCqkuR2r0B2Ppn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha384-eRwUWQDbnWMRrNpCKFsqmkfL7PMM8a4uUw5AvjTuLRoYFfozRz7g9BS696LvdNrE" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha384-PtTRqvDhycIBU6x1wwIqnbDo8adeWIWP3AHmnrvccafo35E7oIvW7HPXn2YimvWu" crossorigin="anonymous"></script>
+    <script src="assets/js/default.min.js"></script>
 </body>
-
 </html>
