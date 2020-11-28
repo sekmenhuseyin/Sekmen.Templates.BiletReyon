@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,61 +11,110 @@
     <meta name="author" content="humans.txt" />
     <title>Bilet Reyon</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha384-kcNNzf7wI8//ZkNUaDd5JwxLoFaBgkj9Z4O4NwtuX9Lkmsz0HoITOxJsGkYxDuyG" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" integrity="sha384-O1hPCzrpXngZMErIjr+H0eOvTf1GKeN4n8CAAgeGgNT8SmQot8u0Zf7V9ipByhSi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" integrity="sha384-iC8v6aqYfKyFWSrStYfmqfKKxkUD/zWxkVY9AcKrKDZY0NWW+G4eOf31STkCR8ya" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha384-VK/ia2DWrvtO05YDcbWI8WE3WciOH0RhfPNuRJGSa3dpAs5szXWQuCnPNv/yzpO4" crossorigin="anonymous">
-    <link href="assets/css/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" rel="stylesheet" />
+    <link href="/assets/plugins/auto-complete.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+    <link href="/assets/css/default.css" rel="stylesheet" />
+    <link href="/assets/css/layout.css" rel="stylesheet" />
 </head>
 <body>
-    <header></header>
-    <section class="subscribe">
-        <div class="container clearfix">
-            <div class="row">
-                <div class="col-md-6">
-                    <img class="pull-left giftIcon" src="/assets/images/gift.png" alt="">
-                    <p class="text">
-                        <span>İNDİRİM VE PROMOSYONLARDAN</span><br>
-                        ANINDA HABERDAR OLMAK İSTER MİSİNİZ?
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <form class="searchBottomArea">
-                        <input type="text" name="Email" placeholder="E-Mail Adresiniz..." aria-label="Search"
-                               class="form-control">
-                        <button class="btn my-2 my-sm-0">ABONE OL</button>
-                    </form>
+    <div id="ticketVue">
+        <header>
+            <div class="topHeader">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="/">
+                            <img src="/assets/images/logo.png" />
+                        </a>
+                        <div class="mobileTopMenu">
+                            <a href="#"><i class="icon-m icon-phone2"></i></a>
+                            <a href="javascript:;" class="showMobileMenu"><i class="icon-m icon-menu"></i></a>
+                        </div>
+                        <div class="collapse navbar-collapse topMenu" id="navbarSupportedContent">
+                            <form class="form-inline searchArea">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Arama yapın..." aria-label="Search">
+                                <button class="btn my-2 my-sm-0"><i class="fa fa-search"></i>ARA</button>
+                            </form>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#"><i class="fa fa-home"></i>ANASAYFA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-users"></i>HAKKIMIZDA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-globe"></i>İLETİŞİM</a>
+                                </li>
+                            </ul>
+                            <div class="callNow">
+                                <div class="text"><span>HEMEN ARA BİLET AL</span></div>
+                                <div class="number">
+                                    <span class="icon icon-phone"></span>0850 123 45 67
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="bottomHeader">
+                        <div class="nav nav-pills nav-fill menu2">
+                            <a href="#" class="nav-item nav-link">KAMPANYALI BİLETLER</a>
+                            <a href="#" class="nav-item nav-link">PEGASUS UÇAK BİLETİ</a>
+                            <a href="#" class="nav-item nav-link">THY UÇAK BİLETİ</a>
+                            <a href="#" class="nav-item nav-link">ATLASJET UÇAK BİLETİ</a>
+                            <a href="#" class="nav-item nav-link">ONURAIR UÇAK BİLETİ</a>
+                            <a href="#" class="nav-item nav-link">MAKALELER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mobileMenuContainer">
+            <div class="mobileMenu">
+                <div class="mobileMenuTitle">
+                    <img src="/assets/images/menuIcon.png" class="closeMobileMenu" /> <span>Kullanıcı Menüsü</span>
+                </div>
+                <ul class="vertical">
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Anasayfa</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Hakkımızda</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Hava Yolları Bilet Değiştirme</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Anadolu Jet İletişim</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Sun Express İletişim</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Türk Hava Yolları İletişim</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Onur Air İletişim</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Bize Ulaşın</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
-    <div class="banner">
-        <div class="container">
-            <form action="/SearchResult" method="get" id="mainSearch">
+
+        <div class="banner">
+            <div class="container">
                 <div class="ticketBg ticketFilterArea">
                     <div class="ticketBgTop"></div>
                     <ul class="nav flyType">
-                        <li class="active one">Tek Yön</li>
-                        <li class="two">Gidiş Dönüş</li>
+                        <li class="active two">Gidiş Dönüş Uçak Bileti</li>
+                        <li class="one">Tek Yön Uçak Bileti</li>
                     </ul>
                     <div class="row position-relative">
                         <span class="icon icon-change"></span>
-                        <div class="col mobileFull">
+                        <div class="col">
                             <div class="searchInput">
                                 <span class="icon icon-plane"></span>
                                 <span class="title">NEREDEN</span>
-                                <input autocomplete="off" class="input" id="first-place" type="text" name="DepartureName" placeholder="Şehir, Havalimanı" required="required">
-                                <input autocomplete="off" id="first-place-hidden" type="hidden" name="Departure" required="required">
+                                <input class="input" id="first-place" type="text" name="" placeholder="Şehir, Havalimanı" />
                             </div>
                         </div>
-                        <div class="col mobileFull">
+                        <div class="col">
                             <div class="searchInput">
                                 <span class="icon icon-plane2"></span>
                                 <span class="title">NEREYE</span>
-                                <input autocomplete="off" class="input" id="second-place" type="text" name="ArrivalName" placeholder="Şehir, Havalimanı" required="required">
-                                <input autocomplete="off" id="second-place-hidden" readonly="" type="hidden" name="Arrival" required="required">
+                                <input class="input" id="second-place" type="text" name="" placeholder="Şehir, Havalimanı" />
                             </div>
                         </div>
                         <div class="w-100"></div>
@@ -74,186 +122,727 @@
                             <div class="searchInput">
                                 <span class="icon icon-calendar"></span>
                                 <span class="title">GİDİŞ TARİHİ</span>
-                                <input autocomplete="off" class="input hasDatepicker" id="first-date" type="text" name="DepartureDate" placeholder="Tarih Seçiniz" required="required">
+                                <input class="input fly-date" id="first-date" type="text" name="" placeholder="14 Aralık 2018, Cuma" />
                             </div>
                         </div>
-                        <div class="col dateTwo mobileFull" style="display: none;">
+                        <div class="col dateTwo mobileFull">
                             <div class="searchInput">
                                 <span class="icon icon-calendar"></span>
                                 <span class="title">DÖNÜŞ TARİHİ</span>
-                                <input autocomplete="off" class="input hasDatepicker" id="second-date" type="text" name="ArrivalDate" placeholder="Tarih Seçiniz">
+                                <input class="input fly-date" id="second-date" type="text" name="" placeholder="17 Aralık 2018, Cuma" />
                             </div>
                         </div>
-                        <div class="w-100" style="display: none;"></div>
+                        <div class="w-100"></div>
                         <div class="col mobileFull">
                             <div class="searchInput passengerSelect mar-b-2">
                                 <span class="icon icon-man"></span>
                                 <span class="title">YOLCU SEÇİMİ</span>
-                                <input autocomplete="off" class="input" type="text" placeholder="1 Yolcu, Ekonomik" readonly="">
+                                <input class="input" type="text" name="" placeholder="3 Yolcu, Ekonomik" />
                             </div>
-                            <div class="passengerArea" style="display: none;">
+                            <div class="passengerArea">
                                 <table>
-                                    <tbody>
-                                        <tr>
-                                            <td>Yetişkin</td>
-                                            <td>
-                                                <div class="countInputArea">
-                                                    <a href="javascript:;" class="minus">-</a>
-                                                    <input autocomplete="off" class="countInput" name="AdultCount" type="number" value="1" min="1" max="999">
-                                                    <a href="javascript:;" class="plus">+</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Çocuk<span>(2-12 Yaş)</span></td>
-                                            <td>
-                                                <div class="countInputArea">
-                                                    <a href="javascript:;" class="minus">-</a>
-                                                    <input autocomplete="off" class="countInput" name="ChildCount" type="number" value="0" min="0" max="999">
-                                                    <a href="javascript:;" class="plus">+</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bebek<span>(0-2 Yaş)</span></td>
-                                            <td>
-                                                <div class="countInputArea">
-                                                    <a href="javascript:;" class="minus">-</a>
-                                                    <input autocomplete="off" class="countInput" name="InfantCount" type="number" value="0" min="0" max="999">
-                                                    <a href="javascript:;" class="plus">+</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <select class="flyClass" name="PreferedClass">
-                                                    <option value="0">Tüm Sınıflar</option>
-                                                    <option value="1">İndirimli</option>
-                                                    <option value="2">Ekonomi</option>
-                                                    <option value="3">Business</option>
-                                                    <option value="4">First Class</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                    <tr>
+                                        <td>
+                                            Yetişkin<span></span>
+                                        </td>
+                                        <td>
+                                            <div class="countInputArea">
+                                                <a href="javascript:;" class="minus">-</a>
+                                                <input class="countInput" type="number" value="1" min="1" max="999" />
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Çocuk<span>(2-12 Yaş)</span>
+                                        </td>
+                                        <td>
+                                            <div class="countInputArea">
+                                                <a href="javascript:;" class="minus">-</a>
+                                                <input class="countInput" type="number" value="0" min="0" max="999" />
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Bebek<span>(0-2 Yaş)</span>
+                                        </td>
+                                        <td>
+                                            <div class="countInputArea">
+                                                <a href="javascript:;" class="minus">-</a>
+                                                <input class="countInput" type="number" value="0" min="0" max="999" />
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Öğrenci
+                                        </td>
+                                        <td>
+                                            <div class="countInputArea">
+                                                <a href="javascript:;" class="minus">-</a>
+                                                <input class="countInput" type="number" value="0" min="0" max="999" />
+                                                <a href="javascript:;" class="plus">+</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <select class="flyClass">
+                                                <option value="0">Ekonomik</option>
+                                                <option value="0">Business</option>
+                                            </select>
+                                        </td>
+                                    </tr>
                                 </table>
                                 <a class="passengerBtn" href="javascript:;">Tamam</a>
                             </div>
                         </div>
-                        <div class="col last-col" style="display: none;"></div>
+                        <div class="col last-col"></div>
                     </div>
                     <div class="searchBtnCon">
                         <button class="btn btn-block searchBtn">EN UCUZ UÇAK BİLETLERİNİ BUL</button>
                     </div>
                     <div class="ticketBgbottom"></div>
                 </div>
-            </form>
-            <a href="#" class="bannerArow">
-                <span class="icon icon-longarrow"></span>
-            </a>
+                <a href="#" class="bannerArow">
+                    <span class="icon icon-longarrow"></span>
+                </a>
+            </div>
         </div>
-    </div>
-    <footer>
-        <div class="container">
-            <div class="footerMenu row">
-                <div class="col-md-3">
-                    <p class="title">Havayolu Firmaları</p>
-                    <ul class="vertical">
-                        <li><a href="/pegasus-iletisim" title="Pegasus İletişim">Pegasus İletişim</a></li>
-                        <li><a href="/thy-iletisim" title="THY İletişim">Türk Hava Yolları İletişim</a></li>
-                        <li><a href="/anadolu-jet-iletisim" title="Anadolu Jet İletişim">Anadolu Jet İletişim</a></li>
-                        <li><a href="/sunexpress-iletisim" title="SunExpress İletişim">SunExpress İletişim</a></li>
-                    </ul>
-                    <hr>
+        <div class="mainContent">
+            <section class="container sMobile">
+                <div class="callUs clearfix">
+                    <i class="icon-m icon-phone"></i>
+                    <div>
+                        <span class="title">HEMEN ARA BİLETİNİ AL</span><br />
+                        <span class="text">0850 302 54 93</span>
+                    </div>
+                    <a href="phone:+908503025493" class="circleBtn">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 </div>
-                <div class="col-md-3">
-                    <p class="title">Firmamız Hakkında</p>
-                    <ul class="vertical">
-                        <li><a href="/kullanim-sartlari" title="Kullanım Şartları">Kullanım Şartları</a></li>
-                        <li><a href="/gizlilik-sozlesmesi" title="Gizlilik Sözleşmesi">Gizlilik Sözleşmesi</a></li>
-                        <li>
-                            <a href="/satis-sonrasi-hizmetler" title="Satis Sonrasi Hizmetler">
-                                Satış Sonrası
-                                Hizmetler
-                            </a>
-                        </li>
-                        <li><a href="/hizmet-sozlesmesi" title="Hizmet Sözleşmesi">Hizmet Sözleşmesi</a></li>
-                        <li>
-                            <a href="/iptal-iade-sartlari" title="İptal-İade Şartları">İptal &amp; İade Şartları</a>
-                        </li>
-                        <li><a href="/islem-rehberi" title="İşlem Rehberi">İşlem Rehberi</a></li>
-                        <li><a href="/cerez-politikasi" title="Çerez Politikası">Çerez Politikası</a></li>
-                    </ul>
-                    <hr>
+                <div class="mobileWelcome clearfix">
+                    <h2 class="withBorder">
+                        <img src="/assets/images/planeIcon.png" />
+                        Uçak bileti almanın <strong>en güvenilir, en hızlı </strong>ve en ucuz yolu!
+                    </h2>
+                    <p class="welcomeText">
+                        Bilet Reyon ile anlık olarak 15.000 havalimanı'ndan
+                        1.500 farklı havayolu firmasından uçak seferleri ve fiyat
+                        sorgulaması yapabilirsiniz. Kredi kartına 9 taksit imkanı
+                        ödeme kolaylığı. Aylık ortalama 250.000 uçak bileti
+                        satışı gerçekleştirdiğimiz internet sitemiz ve firmamız
+                        Türkiye'nin en büyük online uçak bileti arama motoruna
+                        sahipdir.
+                    </p>
                 </div>
-                <div class="col-md-3">
-                    <p class="title">Popüler Şehirler</p>
-                    <hr>
+                <div class="welcomeIcons">
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <i class="icon-m icon-main1"></i>
+                                <span class="text">10 YILDIR GÜVENLİ VE KALİTELİ HİZMET</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <i class="icon-m icon-main2"></i>
+                                <span class="text">SANİYELER İÇİNDE SATIN ALMA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <i class="icon-m icon-main3"></i>
+                                <span class="text">EN UYGUN BİLET FİYATLARI</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <i class="icon-m icon-main4"></i>
+                                <span class="text">TELEFON İLE ANINDA SATIŞ</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <p class="title active">Yardım &amp; Destek</p>
-                    <ul class="vertical">
-                        <li>
-                            <div id="ETBIS">
-                                <div id="7312e3fdc91d4c009a9042e7c79f874d">
-                                    <a href="https://etbis.eticaret.gov.tr/sitedogrulama/7312e3fdc91d4c009a9042e7c79f874d"
-                                       target="_blank"><img style="width:100px; height:120px"></a>
+                <div class="">
+                    <h2 class="withBorder fs34 font-bold ">Nerelere Uçmak Lazım?</h2>
+                </div>
+            </section>
+            <section class="mainCompanies hMobile">
+                <div class="container">
+                    <div class="owl-carousel companiesSlider owl-theme">
+                        <div class="item">
+                            <img src="assets/images/clients/client1.png" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/clients/client2.png" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/clients/client3.png" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/clients/client4.png" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/clients/client5.png" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/clients/client3.png" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/clients/client4.png" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/clients/client5.png" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="welcome hMobile">
+                <div class="container">
+                    <div class="row">
+                        <div class="col" style="padding-right: 50px;">
+                            <h2>
+                                <img src="assets/images/planeIcon.png" />
+                                UÇAK BİLETİ ALMANIN EN GÜVENİLİR, EN HIZLI VE EN UCUZ YOLU !
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend leo non tellus hendrerit, eget
+                                vestibulum lacus aliquet. Nulla in eros sed libero tempus fermentum. Cras viverra nibh eget velit
+                                tempor, a bibendum augue mattis. Vivamus vehicula at nisi a convallis. Phasellus lobortis velit vel
+                                metus tristique pellentesque. Donec sed justo massa. Sed id pellentesque velit, nec semper erat.
+                                Curabitur eleifend feugiat sem, id lobortis lectus consectetur a. Nam quam nisi, maximus eget nulla
+                                quis, hendrerit efficitur elit.
+                            </p>
+                            <div class="row welcomeBottomArea">
+                                <div class="col col-auto">
+                                    <a href="#" class="link"><i class="icon icon-lightMail"></i>info@pegasusbilet.com</a>
+                                </div>
+                                <div class="col col-auto">
+                                    <a href="#" class="link"><i class="icon icon-lightPhone"></i>0 (850) 123 45 67</a>
+                                </div>
+                                <div class="col">
+                                    <ul class="horizontal social">
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                    </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li>
-                            <a href="https://www.guvendamgasi.org.tr/firmadetay.php?Guid=542ee4ef-5dff-11ea-8718-48df373f4850"
-                               target="_blank">
-                                <img src="https://www.guvendamgasi.org.tr/_logo_js/img/aldi.png"
-                                     id="guvendamgasi" width="100" alt="Güvenilir Site" title="04.08.2020">
-                            </a>
-                        </li>
-                    </ul>
-                    <hr>
+                        </div>
+                        <div class="col" style="max-width: 400px;">
+                            <ul class="vertical welcomeIcons">
+                                <li>
+                                    <img src="assets/images/icon1.png" />10 YILDIR GÜVENLİ VE KALİTELİ HİZMET
+                                </li>
+                                <li>
+                                    <img src="assets/images/icon2.png" />1 SANİYELER İÇERİSİNDE SATIN ALMA İŞLEMİNİ TAMAMLAYIN
+                                </li>
+                                <li>
+                                    <img src="assets/images/icon3.png" />1EN UYGUN FİYATLARLA UÇAK BİLETİ SATIN ALIN
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+            <section class="cardArea">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="assets/images/news/news5.jpg" />
+                                            <p class="card-text">
+                                                BUNLARA DİKKAT EDİN
+                                            </p>
+                                            <h5 class="card-title">Uçak Bileti Alırken Dikkat Edilmesi Gereken Önemli Hususlar !</h5>
+                                            <span class="card-">02.07.2017</span>
+                                            <span class="card-">12.430 OKUNMA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="assets/images/news/news4.jpg" />
+                                            <p class="card-text">
+                                                PEGASUS
+                                            </p>
+                                            <h5 class="card-title">Pegasus İle Uçmanın Rahatlığını Yaşayın </h5>
+                                            <span class="card-">02.07.2017</span>
+                                            <span class="card-">12.430 OKUNMA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="assets/images/news/news3.jpg" />
+                                            <p class="card-text">
+                                                TÜRK HAVA YOLLARI
+                                            </p>
+                                            <h5 class="card-title">
+                                                Türk Hava Yolları’ndan Yeni Hizmet ! Yolculara Yolculuk Boyunca Tablet Da...
+                                            </h5>
+                                            <span class="card-">02.07.2017</span>
+                                            <span class="card-">12.430 OKUNMA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="assets/images/news/news2.jpg" />
+                                            <p class="card-text">
+                                                PEGASUS
+                                            </p>
+                                            <h5 class="card-title">Pegasus Yenilenen Uçak İç Tasarımları İle Müşterilerini Büyüledi</h5>
+                                            <span class="card-">02.07.2017</span>
+                                            <span class="card-">12.430 OKUNMA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="assets/images/news/news1.jpg" />
+                                            <p class="card-text">
+                                                BUNLARA DİKKAT EDİN
+                                            </p>
+                                            <h5 class="card-title">Pegasus Firmasına Ait Ulaşılabilir Güncel İletişim Bilgileri</h5>
+                                            <span class="card-">02.07.2017</span>
+                                            <span class="card-">12.430 OKUNMA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="assets/images/news/news1.jpg" />
+                                            <p class="card-text">
+                                                PEGASUS
+                                            </p>
+                                            <h5 class="card-title">Türk Hava Yolları’nın Yeni Seferleri 2017 Ağustos’ta Başlıyor</h5>
+                                            <span class="card-">02.07.2017</span>
+                                            <span class="card-">12.430 OKUNMA</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <nav>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fa fa-long-arrow-left"></i>ÖNCEKİ SAYFA</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">10</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">49</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">SONRAKİ SAYFA <i class="fa fa-long-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card offerArea">
+                                <div class="card-body">
+                                    <ul class="vertical mainOffer">
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs6.jpg" />
+
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs1.png" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs5.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs4.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs3.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs2.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs1.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs6.jpg" />
+
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs1.png" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs5.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs4.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs3.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs2.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/miniImgs/miniImgs1.jpg" />
+                                            <div class="offerContent">
+                                                <span class="title">İSTANBUL - İTALYA</span>
+                                                <span class="price">299 TL</span>
+                                                <a href="#" class="detailBtn">DETAYLAR</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="rightSide">
+                                        <span class="title">NERELERE UÇMAK LAZIM ?</span>
+                                        <div class="d-inline-block arrowCon">
+                                            <span class="arrow bxPrev"></span>
+                                            <span class="arrow bxNext"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="clear">&nbsp;</div>
-        <div class="footerBottom">
-            <a href="#" class="footerArrow">
-                <span class="icon icon-longarrow"></span>
-            </a>
-            <div class="container">
+
+        <section class="subscribe">
+            <div class="container clearfix">
                 <div class="row">
                     <div class="col-md-6">
-                        <img class="pull-left" src="/assets/images/logo.png" alt="">
-                        <span class="copyright">COPYRIGHT - 2020 | TÜM HAKLARI SAKLIDIR.</span>
+                        <img class="pull-left giftIcon" src="/assets/images/gift.png" alt="" />
+                        <p class="text">
+                            <span>İNDİRİM VE PROMOSYONLARDAN</span><br />
+                            ANINDA HABERDAR OLMAK İSTER MİSİNİZ?
+                        </p>
                     </div>
                     <div class="col-md-6">
-                        <div class="pull-right mar-l-30">
-                            <ul class="horizontal social pull-right">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                            </ul>
+                        <form class="searchBottomArea">
+                            <input type="text" name="Email" placeholder="E-Mail Adresiniz..." aria-label="Search" class="form-control">
+                            <button class="btn my-2 my-sm-0">ABONE OL</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="footerMenu row">
+                    <div class="col-md-3">
+                        <p class="title">Havayolu Firmaları</p>
+                        <ul class="vertical">
+                            <li><a href="#">Pegasus</a></li>
+                            <li><a href="#">Türk Hava Yolları</a></li>
+                            <li><a href="#">Anadolujet</a></li>
+                            <li><a href="#">Atlasjet</a></li>
+                            <li><a href="#">Borajet</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                    <div class="col-md-3">
+                        <p class="title">Firmamız Hakkında</p>
+                        <ul class="vertical">
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Hizmetlerimiz</a></li>
+                            <li><a href="#">Satın Alma Hakkında</a></li>
+                            <li><a href="#">Kullanıcı Sözleşmesi</a></li>
+                            <li><a href="#">Bize Ulaşın</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                    <div class="col-md-3">
+                        <p class="title">Popüler Şehirler</p>
+                        <ul class="vertical city">
+                            <li><a href="#">İstanbul</a></li>
+                            <li><a href="#">Antalya</a></li>
+                            <li><a href="#">Ankara</a></li>
+                            <li><a href="#">Eskişehir</a></li>
+                            <li><a href="#">İzmir</a></li>
+                            <li><a href="#">Çanakkale</a></li>
+                            <li><a href="#">Barcelona</a></li>
+                            <li><a href="#">Madrid</a></li>
+                            <li><a href="#">Paris</a></li>
+                            <li><a href="#">California</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                    <div class="col-md-3">
+                        <p class="title">Yardım &amp; Destek</p>
+                        <ul class="vertical">
+                            <li><a href="#">Kullanım Şartları</a></li>
+                            <li><a href="#">Gizlilik Sözleşmesi</a></li>
+                            <li><a href="#">Satış Sonrası Hizmetler</a></li>
+                            <li><a href="#">Hizmet Sözleşmesi</a></li>
+                            <li><a href="#">İptal &amp; İade Şartları</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
+            <div class="footerBottom">
+                <a href="#" class="footerArrow">
+                    <span class="icon icon-longarrow"></span>
+                </a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img class="pull-left" src="/assets/images/logo.png" alt="" />
+                            <span class="copyright">COPYRIGT - 2017 | TÜM HAKLARI SAKLIDIR.</span>
                         </div>
-                        <div class="pull-right line hMobile">&nbsp;</div>
+                        <div class="col-md-6">
+                            <div class="pull-right mar-l-30">
+                                <ul class="horizontal social pull-right">
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pull-right line hMobile">&nbsp;</div>
 
-                        <div class="pull-right mar-r-30 hMobile">
-                            <span class="footerNumber">
-                                <span class="icon icon-phone"></span>(0850) 303 07 87
-                            </span>
+                            <div class="pull-right mar-r-30 hMobile">
+                                <span class="footerNumber">
+                                    <span class="icon icon-phone"></span>0 (850) 123 45 67
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha384-fYxN7HsDOBRo1wT/NSZ0LkoNlcXvpDpFy6WzB42LxuKAX7sBwgo7vuins+E1HCaw" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/tr.js" integrity="sha384-GT36YgQKCTcOn72Z84PoR+QM2VA5fPU5TTrHWHwUfGt30EZJEiNM1aa8sazYVk1e" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha384-l/y5WJTphApmSlx76Ev6k4G3zxu/+19CVvn9OTKI7gs4Yu5Hm8mjpdtdr5oyhnNo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js" integrity="sha384-Caig6D9a+KaR2EonbCuBJHm/oMYXm33Mmy4eBfBz8n9AEIUz01OCqkuR2r0B2Ppn" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha384-eRwUWQDbnWMRrNpCKFsqmkfL7PMM8a4uUw5AvjTuLRoYFfozRz7g9BS696LvdNrE" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha384-PtTRqvDhycIBU6x1wwIqnbDo8adeWIWP3AHmnrvccafo35E7oIvW7HPXn2YimvWu" crossorigin="anonymous"></script>
-    <script src="assets/js/default.min.js"></script>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/assets/plugins/auto-complete.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.countInputArea .minus').on('click', function () {
+                var inputVal = $(this).parent('.countInputArea').find('.countInput').val();
+                if (inputVal > 0)
+                    var inputValMinus = $(this).parent('.countInputArea').find('.countInput').val(+inputVal - 1);
+            });
+            $('.countInputArea .plus').on('click', function () {
+                var inputVal = $(this).parent('.countInputArea').find('.countInput').val();
+                var inputValMinus = $(this).parent('.countInputArea').find('.countInput').val(+inputVal + 1);
+
+            });
+
+            $('.passengerSelect').on('click', function () {
+                $('.passengerArea').show();
+            });
+
+            $(".fly-date").datepicker({
+                numberOfMonths: 2,
+            });
+            $('.searchInput .input').focus(function () {
+                $('.searchInput').removeClass('focus');
+                $(this).parents('.searchInput').addClass('focus');
+            });
+            $('.searchInput').on('click', function () {
+                $(this).find('.input').focus();
+            });
+            $('footer .footerMenu > div p.title').on('click', function () {
+                $(this).next('ul').slideToggle();
+                $(this).toggleClass('active');
+            });
+            $('.showMobileMenu').on('click', function () {
+                $('body').addClass('activeMenu');
+            });
+            $('.closeMobileMenu').on('click', function () {
+                $('body').removeClass('activeMenu');
+            });
+            $('.flyType li').click(function () {
+                $('.flyType li').removeClass('active');
+                $(this).addClass('active');
+                var hasClass = $(this).hasClass('one');
+                if (hasClass) {
+                    $('.dateTwo').hide();
+                    $('.dateTwo + .w-100').hide();
+                    $('.last-col').hide();
+                }
+                if (!hasClass) {
+                    $('.dateTwo').show();
+                    $('.dateTwo + .w-100').show();
+                    $('.last-col').show();
+                }
+            });
+
+            (function (factory) {
+                if (typeof define === "function" && define.amd) {
+
+                    // AMD. Register as an anonymous module.
+                    define(["../widgets/datepicker"], factory);
+                } else {
+
+                    // Browser globals
+                    factory(jQuery.datepicker);
+                }
+            }(function (datepicker) {
+
+                datepicker.regional.tr = {
+                    closeText: "kapat",
+                    prevText: '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>',
+                    nextText: '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>',
+                    currentText: "bugün",
+                    monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                        "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+                    monthNamesShort: ["Oca", "Şub", "Mar", "Nis", "May", "Haz",
+                        "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"],
+                    dayNames: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
+                    dayNamesShort: ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+                    dayNamesMin: ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+                    weekHeader: "Hf",
+                    dateFormat: "dd.mm.yy",
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: ""
+                };
+                datepicker.setDefaults(datepicker.regional.tr);
+
+                return datepicker.regional.tr;
+
+            }));
+            autoComplateInput('first-place');
+            autoComplateInput('second-place');
+
+        });
+        mouseOutClose('.passengerArea');
+        function mouseOutClose(containerName) {
+            $(document).mouseup(function (e) {
+                var container = $(containerName);
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.hide();
+                }
+            });
+        }
+        function autoComplateInput(id) {
+            new window.autoComplete({
+                selector: '#' + id,
+                minChars: 2,
+                source: function (term, suggest) {
+                    term = term.toLowerCase();
+                    //////////////////////////////////////////////////////////////////////////////////////////////
+                    //{"AirportCode":"SAW","Name":"Sabiha Gokcen","CityName":"Istanbul, Türkiye","isCity":false}//
+                    //////////////////////////////////////////////////////////////////////////////////////////////
+                    var choices = window.airportList;
+                    var suggestions = [];
+                    for (i = 0; i < choices.length; i++)
+                        if (~(choices[i].AirportCode + ' ' + choices[i].Name + ' ' + choices[i].CityName).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+                    suggest(suggestions);
+                },
+                renderItem: function (item, search) {
+                    search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&amp;');
+                    var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+                    return `<div class="autocomplete-suggestion" data-code="${item.AirportCode},${item.isCity}" data-langname="${item.Name}" data-lang="${item.CityName}" data-val="${search}"><span class="shortName">${item.AirportCode}</span> ${item.Name},${item.CityName}</div>`;
+                },
+                onSelect: function (e, term, item) {
+                    //console.log(`Item "${item.getAttribute('data-langname')} (${item.getAttribute('data-lang')})" selected by ${e.type == 'keydown' ? 'pressing enter' : 'mouse click'}.`);
+                    document.getElementById(id + "-hidden").value = item.getAttribute('data-code');
+                    document.getElementById(id).value = item.getAttribute('data-langname') + ' (' + item.getAttribute('data-lang') + ')';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
