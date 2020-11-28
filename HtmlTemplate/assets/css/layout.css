@@ -3,8 +3,22 @@
   color: red;
   vertical-align: top; }
 
-.list-style-none {
-  list-style: none; }
+.horizontal {
+  margin: 0;
+  padding: 0; }
+
+.horizontal li {
+  list-style-type: none;
+  float: left;
+  display: block; }
+
+.vertical {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle; }
+
+.vertical li {
+  list-style-type: none; }
 
 input[type=checkbox].form-control {
   width: 25px;
@@ -16361,6 +16375,7 @@ header .bottomHeader {
   cursor: pointer; }
 
 .ticketFilterArea .btn.searchBtn {
+  padding: 15px;
   color: #fff;
   background-color: #e0252f;
   margin: 5px 0 20px 0;
@@ -16509,8 +16524,7 @@ header .bottomHeader {
   position: relative;
   margin: 0 !important; }
   .mainContent .offerArea ul li {
-    position: relative;
-    /*margin-bottom: 33px;*/ }
+    position: relative; }
     .mainContent .offerArea ul li:last-child {
       margin-bottom: 0; }
     .mainContent .offerArea ul li:after {

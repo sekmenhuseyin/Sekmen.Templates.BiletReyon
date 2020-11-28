@@ -3,13 +3,18 @@
         var inputVal = $(this).parent('.countInputArea').find('.countInput').val();
         if (inputVal > 0)
             var inputValMinus = $(this).parent('.countInputArea').find('.countInput').val(+inputVal - 1);
+        countTotal();
     });
     $('.countInputArea .plus').on('click', function () {
         var inputVal = $(this).parent('.countInputArea').find('.countInput').val();
         var inputValMinus = $(this).parent('.countInputArea').find('.countInput').val(+inputVal + 1);
+        countTotal();
 
     });
+    $('.flyClass').on('change', function () {
+        countTotal();
 
+    });
     $('.passengerSelect').on('click', function () {
         $('.passengerArea').show();
     });
@@ -17,6 +22,18 @@
     $(".fly-date").datepicker({
         numberOfMonths: 2,
     });
+    $("#first-date").datepicker({
+        minDate: new Date(),
+        onClose: function (selectedDate) {
+            $("#second-date").datepicker("option", "minDate", selectedDate);
+        }
+    });
+    $("#second-date").datepicker({
+        onClose: function (selectedDate) {
+            $("#first-date").datepicker("option", "maxDate", selectedDate);
+        }
+    });
+
     $('.searchInput .input').focus(function () {
         $('.searchInput').removeClass('focus');
         $(this).parents('.searchInput').addClass('focus');
@@ -43,11 +60,87 @@
             $('.dateTwo + .w-100').hide();
             $('.last-col').hide();
         }
-        if (!hasClass) {
+        else {
             $('.dateTwo').show();
             $('.dateTwo + .w-100').show();
             $('.last-col').show();
         }
+    });
+    $('.flyType li:first').click();
+    $('body').on('click', 'footer .footerMenu > div p.title', function () {
+        $(this).next('ul').slideToggle();
+        $(this).toggleClass('active');
+    });
+
+    $('body').on('click', '.showMobileMenu', function () {
+        $('body').addClass('activeMenu');
+    });
+    $('body').on('click', '.closeMobileMenu', function () {
+        $('body').removeClass('activeMenu');
+    });
+    $('.companiesSlider').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        dots: false,
+        navText: ['<i class="fa fa-long-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>'],
+
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+    var cfgPc = {
+        mode: 'vertical',
+        minSlides: 7,
+        responsive: true,
+        moveSlides: 2,
+        pager: false,
+        prevSelector: '.bxPrev',
+        nextSelector: '.bxNext',
+        prevText: '<i class="fa fa-angle-left"></i>',
+        nextText: '<i class="fa fa-angle-right"></i>',
+        slideMargin: 33
+    };
+    var cfgMobile = {
+        mode: 'horizontal',
+        minSlides: 4,
+        moveSlides: 1,
+        pager: false,
+        controls: false,
+        slideWidth: 210,
+        slideMargin: 20
+    };
+    $('.mainOfferPc').bxSlider(cfgPc);
+    $('.mainOfferMobile').bxSlider(cfgMobile);
+
+    $("#first-place").focusout(function () {
+        setTimeout(function () {
+            if ($('#first-place-hidden').val() < 2) {
+                $("#first-place").val('');
+            }
+        },
+            500);
+    });
+
+    $("#second-place").focusout(function () {
+        setTimeout(function () {
+            if ($('#second-place-hidden').val() < 2) {
+                $("#second-place").val('');
+            }
+        },
+            500);
+    });
+    $('.passengerBtn').click(function () {
+        $('.passengerArea').hide();
     });
 
     (function (factory) {
@@ -125,4 +218,12 @@ function autoComplateInput(id) {
             document.getElementById(id).value = item.getAttribute('data-langname') + ' (' + item.getAttribute('data-lang') + ')';
         }
     });
+}
+function countTotal() {
+    var classText = $(".flyClass option:selected").text();;
+    let count = 0;
+    $('.passengerArea .countInputArea .countInput').each(function (e) {
+        count = count + Number($(this).val())
+    })
+    $('.passengerSelect .input').val(count + ' Yolcu, ' + classText);
 }

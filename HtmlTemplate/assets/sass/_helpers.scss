@@ -4,8 +4,24 @@
     vertical-align: top;
 }
 
-.list-style-none {
-    list-style: none;
+.horizontal {
+    margin: 0;
+    padding: 0;
+}
+
+.horizontal li {
+    list-style-type: none;
+    float: left;
+    display: block;
+}
+.vertical {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.vertical li {
+    list-style-type: none;
 }
 
 input[type=checkbox].form-control {

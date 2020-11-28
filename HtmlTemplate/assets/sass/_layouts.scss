@@ -212,6 +212,7 @@ header {
     }
 
     .btn.searchBtn {
+        padding: 15px;
         color: #fff;
         background-color: $red;
         margin: 5px 0 20px 0;
@@ -429,7 +430,6 @@ header {
         ul {
             li {
                 position: relative;
-                /*margin-bottom: 33px;*/
                 &:last-child {
                     margin-bottom: 0;
                 }
