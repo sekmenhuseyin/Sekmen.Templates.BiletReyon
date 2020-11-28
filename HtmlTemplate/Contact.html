@@ -1,0 +1,313 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Inner.cshtml";
+}
+
+@section head
+{
+    <style>
+        .contentArea {
+            padding: 30px;
+        }
+
+            .contentArea h3 {
+                font-family: sf-medium;
+                color: #3d3b3b;
+                font-size: 26px;
+            }
+
+            .contentArea p {
+                font-family: sf-regular;
+                color: #6c6b6b;
+                font-size: 17px;
+                line-height: 28px;
+            }
+
+        .contact .social a {
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            font-size: 20px;
+        }
+
+        .contact .cRow span {
+            font-family: sf-medium;
+            font-size: 28px;
+            color: #3d3b3b;
+        }
+
+        .contact .cRow i {
+            margin-right: 10px;
+        }
+
+        .contact .detailTable tr td {
+            padding: 20px 0;
+        }
+
+        .contact input[type="text"] {
+            border: 1px solid #ededed;
+            height: 60px;
+            padding: 0 25px;
+            width: 100%;
+        }
+
+        .contact select {
+            border: 1px solid #ededed;
+            height: 60px;
+            padding: 0 25px;
+            width: 100%;
+        }
+
+        .contact textarea {
+            border: 1px solid #ededed;
+            padding: 15px 25px;
+            width: 100%;
+        }
+
+        .contact .formTable {
+        }
+
+            .contact .formTable td {
+                border: none;
+            }
+
+        .contact .sendBtn {
+            height: 60px;
+            background-color: #e0252f;
+            font-family: sf-bold;
+            font-size: 17px;
+            color: #fff;
+            max-width: 280px;
+            float: right;
+            display: block;
+            text-align: center;
+            line-height: 60px;
+            border: none;
+            width: 100%;
+        }
+
+            .contact .sendBtn:hover {
+                opacity: .7;
+            }
+    </style>
+}
+
+
+<div class="innerContent">
+    <section class="innerSearch">
+        <div class="container">
+            <div class="row position-relative">
+                <div class="col">
+                    <div class="searchInput">
+                        <div>
+                            <span class="icon icon-plane-white"></span>
+                        </div>
+                        <div class="pull-left">
+                            <span class="title">NEREDEN</span>
+                            <input class="input" id="first-place" type="text" name="" placeholder="Şehir, Havalimanı" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="searchInput">
+                        <div>
+                            <span class="icon icon-plane2-white"></span>
+                        </div>
+                        <div>
+                            <span class="title">NEREYE</span>
+                            <input class="input" id="second-place" type="text" name="" placeholder="Şehir, Havalimanı" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="searchInput">
+                        <div>
+                            <span class="icon icon-calendar-white"></span>
+                        </div>
+                        <div>
+                            <span class="title">GİDİŞ TARİHİ</span>
+                            <input class="input fly-date" id="first-date" type="text" name="" placeholder="14 Aralık 2018, Cuma" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col dateTwo">
+                    <div class="searchInput">
+                        <div>
+                            <span class="icon icon-calendar-white"></span>
+                        </div>
+                        <div>
+                            <span class="title">DÖNÜŞ TARİHİ</span>
+                            <input class="input fly-date" id="second-date" type="text" name="" placeholder="17 Aralık 2018, Cuma" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="searchInput passengerSelect mar-b-2">
+                        <div>
+                            <span class="icon icon-man-white"></span>
+                        </div>
+                        <div>
+                            <span class="title">YOLCU SEÇİMİ</span>
+                            <input class="input" type="text" name="" placeholder="3 Yolcu, Ekonomik" />
+                        </div>
+                    </div>
+                    <div class="passengerArea">
+                        <table>
+                            <tr>
+                                <td>
+                                    Yetişkin<span></span>
+                                </td>
+                                <td>
+                                    <div class="countInputArea">
+                                        <a href="javascript:;" class="minus">-</a>
+                                        <input class="countInput" type="number" value="1" min="1" max="999" />
+                                        <a href="javascript:;" class="plus">+</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Çocuk<span>(2-12 Yaş)</span>
+                                </td>
+                                <td>
+                                    <div class="countInputArea">
+                                        <a href="javascript:;" class="minus">-</a>
+                                        <input class="countInput" type="number" value="0" min="0" max="999" />
+                                        <a href="javascript:;" class="plus">+</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Bebek<span>(0-2 Yaş)</span>
+                                </td>
+                                <td>
+                                    <div class="countInputArea">
+                                        <a href="javascript:;" class="minus">-</a>
+                                        <input class="countInput" type="number" value="0" min="0" max="999" />
+                                        <a href="javascript:;" class="plus">+</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Öğrenci
+                                </td>
+                                <td>
+                                    <div class="countInputArea">
+                                        <a href="javascript:;" class="minus">-</a>
+                                        <input class="countInput" type="number" value="0" min="0" max="999" />
+                                        <a href="javascript:;" class="plus">+</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <select class="flyClass">
+                                        <option value="0">Ekonomik</option>
+                                        <option value="0">Business</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="searchInput">
+                        <button class="findTicket btn m-auto">BİLET BUL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container contact">
+            <div class="row">
+                <div class="col clearfix">
+                    <h2 class="contentTitle left">
+                        BİLETREYON.COM İLETİŞİM BİLGİLERİMİZ
+                    </h2>
+                    <div class="bg-white contentArea clearfix">
+                        <p>
+                            Bizimle iletişime geçmek için aşağıdaki iletişim bilgilerimizi kullanabilirsiniz. Ayrıca sosyal medya
+                            hesaplarımızdan da takip edebilirsiniz.
+                        </p>
+
+                        <table class="table detailTable">
+                            <tr>
+                                <td class="cRow"><i class="icon-m icon-phone2" style="vertical-align: top;"></i> <span>info@@pegasusbilet.com</span></td>
+                            </tr>
+                            <tr>
+                                <td class="cRow"><i class="icon-m icon-phone2" style="vertical-align: top;"></i> <span>0 (850) 123 45 67</span></td>
+                            </tr>
+                            <tr>
+                                <td style="border-bottom: 1px solid #dee2e6;">
+                                    <ul class="horizontal social">
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                    </ul>
+                            </tr>
+                            </td>
+                            </tr>
+                        </table>
+                        <p>Aşağıda yer alan iletişim formunu doldurarakta bizimle iletişime geçebilirsiniz.</p>
+
+                        <table class="table formTable">
+                            <tr>
+                                <td><input type="text" placeholder="ADINIZ" /></td>
+                                <td><input type="text" placeholder="SOYADINIZ" /></td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="E-POSTA ADRESİNİZ" /></td>
+                                <td><input type="text" placeholder="TELEFON NUMARANIZ" /></td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <select>
+                                        <option>İLETİŞİME GEÇMEK İSTEDİĞİNİZ DEPARTMAN</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <textarea rows="4" placeholder="MESAJINIZI YAZINIZ..."></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="sendBtn">MEASJIMI GÖNDER</button>
+
+                    </div>
+
+                </div>
+                <div class="col-4" style="max-width:320px;">
+                    <h2 class="contentTitle right">BİLETREYON KURUMSAL</h2>
+                    <ul class="vertical contentMenu">
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Hakkımızda</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Biz Kimiz?</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Misyonumuz</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Vizyonumuz</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Kullanıcı Sözleşmesi</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Satış Sözleşmesi</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>İptal & İade Şartları</a></li>
+                    </ul>
+                    <h2 class="contentTitle right">DİĞER FİRMALAR İLETİŞİM</h2>
+                    <ul class="vertical contentMenu">
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Türk Hava Yolları İletişim</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Atlasjet İletişim</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Borajet İletişim</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Onur Air İletişim</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Sun Express İletişim</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Atlas Global İletişim</a></li>
+                        <li><a href="#"><i class="icon icon-longarrow" aria-hidden="true"></i>Anadolu Jet İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

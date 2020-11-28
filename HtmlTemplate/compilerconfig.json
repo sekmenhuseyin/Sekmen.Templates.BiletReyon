@@ -4,6 +4,10 @@
     "inputFile": "assets/sass/layout.scss"
   },
   {
+    "outputFile": "assets/css/Loading.css",
+    "inputFile": "assets/sass/Loading.scss"
+  },
+  {
     "outputFile": "assets/css/SearchResult.css",
     "inputFile": "assets/sass/SearchResult.scss"
   }
