@@ -34,11 +34,22 @@ h2.withBorder {
     }
 }
 
-.font-bold {
-    font-family: sf-bold !important;
+a, [popover], [tooltip] {
+    cursor: pointer;
+}
+
+[popover]:hover {
+    text-decoration: underline;
+}
+
+a, a:hover, a:visited, a:focus {
+    outline: none;
+    color: #2b6789;
 }
 
 *:focus {
+    outline: 0 !important;
+    text-decoration: none;
     box-shadow: none !important;
 }
 

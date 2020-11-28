@@ -1,0 +1,106 @@
+﻿.loading {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #000070;
+  z-index: 99;
+  display: table; }
+  .loading .spinner-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1em;
+    margin-top: -1em; }
+  .loading div {
+    vertical-align: middle;
+    display: table-cell; }
+    .loading div img {
+      max-width: 100%; }
+
+.innerContent .searchResult .body .tableCon .tableBody .flyItem > div:first-child .align-self-center {
+  width: auto;
+  text-align: center; }
+
+.singleLine {
+  margin-bottom: -70px !important; }
+
+.connectedText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  padding: 5px 10px;
+  background: red;
+  font-family: sf-semibold;
+  color: #fff; }
+
+.connectedText:after {
+  display: none !important; }
+
+.innerContent .searchResult .body .tableCon .tableBody .flyItem .chooseBtn {
+  position: relative;
+  z-index: 20; }
+
+.greenBtn {
+  height: 60px;
+  background-color: #5fb981;
+  font-family: sf-bold;
+  font-size: 17px;
+  color: #fff;
+  display: block;
+  border: none;
+  text-align: center;
+  float: right;
+  padding: 0 60px;
+  line-height: 60px; }
+  .greenBtn:hover {
+    opacity: .7; }
+
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-ms-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.animate-flicker {
+  -webkit-animation: flickerAnimation 1.5s infinite;
+  -moz-animation: flickerAnimation 1.5s infinite;
+  -o-animation: flickerAnimation 1.5s infinite;
+  animation: flickerAnimation 1.5s infinite; }
+
+.autocomplete-suggestions {
+  overflow: auto !important;
+  padding: 10px 0; }
+
+footer {
+  padding: 60px 0 0 0;
+  background: white; }

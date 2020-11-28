@@ -13,6 +13,15 @@ input[type=checkbox].form-control {
   display: inline-block;
   vertical-align: middle; }
 
+.clear {
+  clear: both; }
+
+.clear-left {
+  clear: left !important; }
+
+.clear-right {
+  clear: right !important; }
+
 .clickable {
   cursor: pointer; }
 
@@ -15388,10 +15397,19 @@ h2.withBorder {
     width: 100px;
     background-color: #e0252f; }
 
-.font-bold {
-  font-family: sf-bold !important; }
+a, [popover], [tooltip] {
+  cursor: pointer; }
+
+[popover]:hover {
+  text-decoration: underline; }
+
+a, a:hover, a:visited, a:focus {
+  outline: none;
+  color: #2b6789; }
 
 *:focus {
+  outline: 0 !important;
+  text-decoration: none;
   box-shadow: none !important; }
 
 .ui-datepicker {

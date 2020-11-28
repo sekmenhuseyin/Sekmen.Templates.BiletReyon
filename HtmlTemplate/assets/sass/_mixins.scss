@@ -23,6 +23,24 @@
     }
 }
 
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
 @mixin transition($x...) {
     -webkit-transition: $x;
     -moz-transition: $x;

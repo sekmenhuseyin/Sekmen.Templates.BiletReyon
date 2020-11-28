@@ -16,6 +16,18 @@ input[type=checkbox].form-control {
     vertical-align: middle;
 }
 
+.clear {
+    clear: both;
+}
+
+.clear-left {
+    clear: left !important;
+}
+
+.clear-right {
+    clear: right !important;
+}
+
 .clickable {
     cursor: pointer;
 }
