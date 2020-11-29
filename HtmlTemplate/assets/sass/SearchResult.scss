@@ -1,5 +1,9 @@
 @import "mixins";
 
+.detailRow{
+    display:none;
+}
+
 .innerContent .searchResult .body .tableCon .tableBody .flyItem > div:first-child .align-self-center {
     width: auto;
     text-align: center;

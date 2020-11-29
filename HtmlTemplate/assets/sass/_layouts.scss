@@ -1180,6 +1180,165 @@ footer {
                             color: #3d3b3b;
                             font-size: 14px;
                             min-width: 200px;
+
+
+                            .airportShort {
+                                font-size: 14px;
+                                color: #696969;
+                                display: block;
+                                font-family: sf-semibold;
+                            }
+
+                            .detailText {
+                                color: #e0252f;
+                                font-size: 13px;
+                                font-family: sf-semibold;
+
+                                i {
+                                    background-color: red;
+                                    display: inline-block;
+                                    color: #fff;
+                                    height: 13px;
+                                    width: 13px;
+                                    text-align: center;
+                                    line-height: 15px;
+                                    border-radius: 100%;
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+
+
+                        .detailRow {
+                            text-align: left;
+                            padding-top: 20px;
+                            border-top: 1px solid #f2f2f2;
+                            margin: 20px -15px 0;
+                            padding: 20px 15px 0 15px;
+
+                            p {
+                                font-family: sf-medium;
+                                font-size: 16px;
+
+                                span {
+                                    display: inline-block;
+                                    margin-left: 15px;
+                                }
+                            }
+
+                            ul {
+                                padding: 0 0 0 40px;
+                                margin: 0;
+                                list-style-type: none;
+
+                                li {
+                                    position: relative;
+                                    margin-bottom: 10px;
+                                    font-size: 14px;
+                                    font-family: sf-medium;
+                                    color: #3d3b3b;
+                                    padding-top: 1px;
+                                    padding-left: 5px;
+                                    min-height: 26px;
+
+                                    &:last-child {
+                                        span {
+                                            display: none;
+                                        }
+                                    }
+
+                                    span {
+                                        background-color: #e0252f;
+                                        content: " ";
+                                        height: 34px;
+                                        width: 2px;
+                                        display: block;
+                                        position: absolute;
+                                        left: -13px;
+                                        top: 20px;
+                                    }
+
+                                    &::before {
+                                        background-color: #e0252f;
+                                        content: " ";
+                                        height: 15px;
+                                        width: 15px;
+                                        display: block;
+                                        border-radius: 100%;
+                                        position: absolute;
+                                        left: -20px;
+                                        top: 5px;
+                                        border: 4px solid #fff;
+                                        box-shadow: 0 0 0px 2px #e0252f;
+                                    }
+                                }
+                            }
+
+                            .drowBottom {
+                                padding-top: 10px;
+
+                                i {
+                                    font-size: 12px;
+                                    background-color: #f9b641;
+                                    color: #fff;
+                                    height: 20px;
+                                    width: 20px;
+                                    border-radius: 100%;
+                                    text-align: center;
+                                    line-height: 20px;
+                                }
+
+                                span {
+                                    font-family: sf-medium;
+                                    font-size: 14px;
+                                }
+                            }
+
+                            .flycList {
+                                padding: 0 0 0 40px;
+                                margin: 0;
+                                list-style-type: none;
+
+                                .flycListItem {
+                                    position: relative;
+                                    margin-bottom: 10px;
+                                    font-size: 14px;
+                                    font-family: sf-medium;
+                                    color: #3d3b3b;
+                                    padding-top: 1px;
+                                    padding-left: 5px;
+                                    min-height: 26px;
+
+                                    &:last-child span {
+                                        display: none;
+                                    }
+
+                                    span {
+                                        background-color: #e0252f;
+                                        content: " ";
+                                        height: 34px;
+                                        width: 2px;
+                                        display: block;
+                                        position: absolute;
+                                        left: -13px;
+                                        top: 20px;
+                                    }
+
+                                    &::before {
+                                        background-color: #e0252f;
+                                        content: " ";
+                                        height: 15px;
+                                        width: 15px;
+                                        display: block;
+                                        border-radius: 100%;
+                                        position: absolute;
+                                        left: -20px;
+                                        top: 5px;
+                                        border: 4px solid #fff;
+                                        box-shadow: 0 0 0px 2px #e0252f;
+                                    }
+                                }
+                            }
                         }
 
                         .hour {

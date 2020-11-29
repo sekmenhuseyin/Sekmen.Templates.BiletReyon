@@ -98,29 +98,6 @@
         }
     });
 
-    var cfgPc = {
-        mode: "vertical",
-        minSlides: 7,
-        responsive: true,
-        moveSlides: 2,
-        pager: false,
-        prevSelector: ".bxPrev",
-        nextSelector: ".bxNext",
-        prevText: "<i class='fa fa-angle-left'></i>",
-        nextText: "<i class='fa fa-angle-right'></i>",
-        slideMargin: 33
-    };
-    var cfgMobile = {
-        mode: "horizontal",
-        minSlides: 4,
-        moveSlides: 1,
-        pager: false,
-        controls: false,
-        slideWidth: 210,
-        slideMargin: 20
-    };
-    $(".mainOfferPc").bxSlider(cfgPc);
-    $(".mainOfferMobile").bxSlider(cfgMobile);
 
     $("#first-place").focusout(function () {
         setTimeout(function () {
@@ -143,7 +120,5 @@
         $(".passengerArea").hide();
     });
 
-    autoComplateInput("first-place");
-    autoComplateInput("second-place");
     mouseOutClose(".passengerArea");
 });
