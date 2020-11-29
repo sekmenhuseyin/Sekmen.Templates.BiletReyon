@@ -2278,3 +2278,26 @@ footer {
         }
     }
 }
+
+.bComplate {
+    text-align: center;
+    max-width: 750px;
+    margin: 50px auto 60px;
+
+    img {
+        margin: 0 auto 20px;
+    }
+
+    .bTitle {
+        font-family: sf-regular;
+        color: #3d3b3b;
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .bText {
+        font-family: sf-regular;
+        color: #959494;
+        font-size: 20px;
+    }
+}

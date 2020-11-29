@@ -1,382 +1,340 @@
-﻿    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/15.0.0/css/intlTelInput.css" integrity="sha384-9KPPcayV8JI+A4x2K3zcgr0B/tbGxIOidFfVj83E8F3yMY0uRVEnoGcVVJQ2GT8k" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/card.css" />
-    <style>
-        .paymentOptionTable tbody td {
-            padding: 20px;
-            min-width: 190px;
-        }
-
-        .paymentOptionTable tbody > tr:hover {
-            cursor: pointer;
-            background: #dedede;
-        }
-
-        .paymentOptionTable tbody > tr.selected {
-            background: #dedede;
-        }
-
-        .mobilePersonInfo {
-        }
-
-            .mobilePersonInfo > div {
-                padding:5px;
-            }
-
-                .mobilePersonInfo > div span {
-                    margin: 0;
-                }
-
-                .mobilePersonInfo > div div {
-                }
-
-        .passengerInfoDetail {
-        }
-
-            .passengerInfoDetail tr {
-            }
-
-                .passengerInfoDetail tr td {
-                    text-align: left !important;
-                }
-
-                    .passengerInfoDetail tr td:not(:last-child):before {
-                        content: " ";
-                        display: block;
-                        height: 40px;
-                        width: 1px;
-                        background-color: #ededed;
-                        position: absolute;
-                        right: 0;
-                        top: 50%;
-                        margin-top: -20px;
-                    }
-    </style>
-}
-<div class="innerContent">
-    <section>
-        <div class="container bg-white buyingPage">
-            <div class="bComplate">
-                <img class="center-block" src="/media/1002/bcomplate.png">
-                <p class="bTitle">Satın Alma İşleminiz Başarıyla Gerçekleştirilmiştir.</p>
-                <p class="bText">Aşağıda yer alan uçuş bilgileri satın almış olduğunuz bilete aittir. Aynı bilgiler girmiş olduğunuz e-posta adresinize ve telefon numaranıza da gönderilmiştir.</p>
-            </div>
-            <section class="hMobile" v-if="!mobile">
-                <hr class="m-b-50" />
-                <h2 class="title"><i class="icon icon-plane3"></i>UÇUŞ BİLGİLERİ</h2>
-                <table class="customTable">
-                    <thead>
-                        <tr>
-                            <th class="text-nowrap">GİDİŞ - {{flightData.FlightDateTime | titleDateFormat}}</th>
-                            <th>KALKIŞ</th>
-                            <th>VARIŞ</th>
-                            <th>UÇUŞ NO</th>
-                            <th>SINIF</th>
-                            <th>BAGAJ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="fdata in flightData.FlightList">
-                            <td class="company">
-                                <!--<img src="/assets/images/companies/pegasusIcon.png" alt="pegasusIcon">-->
-                                {{flightData.AirWay}}
-                            </td>
-                            <td><span class="time">{{fdata.DepartureTime}}</span> <span class="airport">{{fdata.DepartureCity}} ({{fdata.Departure}})</span></td>
-                            <td><span class="time">{{fdata.ArrivalTime}}</span> <span class="airport">{{fdata.ArrivalCity}} ({{fdata.Arrival}})</span></td>
-                            <td>{{fdata.FlightNo}}</td>
-                            <td>{{fdata.FlightClass}}</td>
-                            <td>{{fdata.BagInfo}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="customTable" v-if="returnFlightData">
-                    <thead>
-                        <tr>
-                            <th class="text-nowrap">DÖNÜŞ - {{returnFlightData.FlightDateTime | titleDateFormat}}</th>
-                            <th>KALKIŞ</th>
-                            <th>VARIŞ</th>
-                            <th>UÇUŞ NO</th>
-                            <th>SINIF</th>
-                            <th>BAGAJ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="fdata in returnFlightData.FlightList">
-                            <td class="company">
-                                {{returnFlightData.AirWay}}
-                            </td>
-                            <td><span class="time">{{fdata.DepartureTime}}</span> <span class="airport">{{fdata.DepartureCity}} ({{fdata.Departure}})</span></td>
-                            <td><span class="time">{{fdata.ArrivalTime}}</span> <span class="airport">{{fdata.ArrivalCity}} ({{fdata.Arrival}})</span></td>
-                            <td>{{fdata.FlightNo}}</td>
-                            <td>{{fdata.FlightClass}}</td>
-                            <td>{{fdata.BagInfo}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2 class="title m-t-50"><i class="icon icon-man2 align-text-top"></i>YOLCU BİLGİLERİ</h2>
-                <div v-for="(n,index) in passList" class="m-b-20">
-                    <table class="customTable">
-                        <thead>
-                            <tr>
-                                <th>
-                                    {{index+1}}. YOLCU BİLGİLERİ
-                                    <input type="hidden" autocomplete="off" required="required" name="PassengerType" :value="n[1]" />
-                                </th>
-                            </tr>
-                        </thead>
-                    </table>
-
-                    <table class="passengerInfo customTable passengerInfoDetail">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <span>ADI</span>
-                                    <div>{{n.Name}}</div>
-                                </td>
-                                <td>
-                                    <span>SOYADI</span>
-                                    <div>{{n.SurName}}</div>
-                                </td>
-                                <td>
-                                    <span>TC KİMLİK NO</span>
-                                    <div>{{n.CitizenNumber}}</div>
-                                </td>
-                                <td>
-                                    <span>DOĞUM TARİHİ</span>
-                                    <div>{{n.BirthDate}}</div>
-                                </td>
-                                <td>
-                                    <span>CİNSİYET</span>
-                                    <div>{{n.GenderType==0 ? 'Erkek' : 'Kadın' }}</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+﻿<!-- _______. _______  __  ___ .___  ___.  _______ .__   __.     _______   ___________    ____
+    /       ||   ____||  |/  / |   \/   | |   ____||  \ |  |    |       \ |   ____\   \  /   /
+   |   (----`|  |__   |  '  /  |  \  /  | |  |__   |   \|  |    |  .--.  ||  |__   \   \/   /
+    \   \    |   __|  |    <   |  |\/|  | |   __|  |  . `  |    |  |  |  ||   __|   \      /
+.----)   |   |  |____ |  .  \  |  |  |  | |  |____ |  |\   |  __|  '--'  ||  |____   \    /
+|_______/    |_______||__|\__\ |__|  |__| |_______||__| \__| (__)_______/ |_______|   \__/-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="humans.txt" />
+    <title>Bilet Reyon</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link href="/assets/css/layout.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="ticketVue">
+        <header>
+            <div class="topHeader">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="/">
+                            <img src="/assets/images/logo.png" />
+                        </a>
+                        <div class="mobileTopMenu">
+                            <a href="#"><i class="icon-m icon-phone2"></i></a>
+                            <a href="javascript:;" class="showMobileMenu"><i class="icon-m icon-menu"></i></a>
+                        </div>
+                        <div class="collapse navbar-collapse topMenu" id="navbarSupportedContent">
+                            <form class="form-inline searchArea">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                                <button class="btn my-2 my-sm-0"><i class="fa fa-search"></i></button>
+                            </form>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/"><i class="fa fa-home"></i>HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-users"></i>ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contact.html"><i class="fa fa-globe"></i>CONTACT</a>
+                                </li>
+                            </ul>
+                            <div class="callNow">
+                                <div class="text"><span>CALL US</span></div>
+                                <div class="number">
+                                    <span class="icon icon-phone"></span>0850 123 45 67
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-                <h2 class="title m-t-50"><i class="icon icon-price"></i>FİYAT BİLGİLERİ</h2>
-                <table class="customTable">
-                    <thead>
-                        <tr>
-                            <th class="text-left">YOLCU</th>
-                            <th class="text-left">FİYAT</th>
-                            <th class="text-left">VERGİ</th>
-                            <th class="text-left">HİZMET BEDELİ</th>
-                            <th class="text-left">TOPLAM</th>
-                        </tr>
-                    </thead>
-                    <tbody class="withTfoot">
-                        <tr v-for="person in fareList.FareList">
-                            <td class="text-left percent35">{{person.PassengerCount}} {{person.PassengerType}}</td>
-                            <td class="text-left">{{person.BasePrice}} {{person.Currency}}</td>
-                            <td class="text-left">{{person.Tax}} {{person.Currency}}</td>
-                            <td class="text-left">{{person.ServicesPrice}} {{person.Currency}}</td>
-                            <td class="text-left total">{{person.TotalPrice}} {{person.Currency}}</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th class="text-right no-padding">TOPLAM FİYAT: </th>
-                            <th class="text-left total">{{totalPriceV}} {{flightData.Currency}}</th>
-                        </tr>
-                    </tfoot>
-                </table>
-
-            </section>
+            </div>
+            <div class="bg-white">
+                <div class="container">
+                    <div class="bottomHeader">
+                        <div class="nav nav-pills nav-fill menu2">
+                            <a href="#" class="nav-item nav-link">CAMPAIGN TICKETS</a>
+                            <a href="#" class="nav-item nav-link">PEGASUS FLIGHT TICKET</a>
+                            <a href="#" class="nav-item nav-link">THY FLIGHT TICKET</a>
+                            <a href="#" class="nav-item nav-link">ATLASJET FLIGHT TICKET</a>
+                            <a href="#" class="nav-item nav-link">ONURAIR FLIGHT TICKET</a>
+                            <a href="#" class="nav-item nav-link">ARTICLES</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mobileMenuContainer">
+            <div class="mobileMenu">
+                <div class="mobileMenuTitle">
+                    <img src="/assets/images/menuIcon.png" class="closeMobileMenu" /> <span></span>
+                </div>
+                <ul class="vertical">
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> About Us</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Airline Ticket Change</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Anadolu Jet</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Sun Express</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Turkish Airlines</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Onur Air</a></li>
+                    <li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Contact Us</a></li>
+                </ul>
+            </div>
         </div>
 
-        <section class="sMobile" v-if="mobile">
-            <div class="container bg-white buyingPage buyingMobile">
-
-                <h2 class="mobileTitleH2">Uçuş Bilgileri</h2>
-                <div class="infoBox">GİDİŞ - {{flightData.FlightDateTime | titleDateFormat}}</div>
-                <div class="box">
-                    <div v-for="fdata in flightData.FlightList">
-                        <div class="row mobileBTable">
-                            <div class="col-4">{{flightData.AirWay}}</div>
-                            <div class="col doubleText">
-                                <span class="text1">UÇUŞ NO:</span>
-                                <span class="text2">
-                                    {{fdata.FlightNo}}
-                                </span>
-                            </div>
-                            <div class="col doubleText">
-                                <span class="text1">SINIF:</span>
-                                <span class="text2">{{fdata.FlightClass}}</span>
-                            </div>
-                            <div class="col doubleText">
-                                <span class="text1">BAGAJ:</span>
-                                <span class="text2">{{fdata.BagInfo}}</span>
-                            </div>
-                        </div>
-                        <div class="customTable">
-                            <span class="time">{{fdata.DepartureTime}}</span>
-                            <span class="airport">
-                                <span class="t1">KALKIŞ</span><br />
-                                <span class="t2">{{fdata.DepartureCity}} - {{fdata.Departure}}</span>
-                            </span>
-                            <div class="clear m-t-10"></div>
-                            <span class="time">{{fdata.ArrivalTime}}</span>
-                            <span class="airport">
-                                <span class="t1">KALKIŞ</span><br />
-                                <span class="t2">{{fdata.ArrivalCity}} - {{fdata.Arrival}}</span>
-                            </span>
-                        </div>
+        <!-- BODY -->
+        <div class="innerContent">
+            <section>
+                <div class="container bg-white buyingPage">
+                    <div class="bComplate">
+                        <img src="/assets/images/bcomplete.png" class="">
+                        <p class="bTitle">Your Purchase Has Been Successfully Made.</p>
+                        <p class="bText">The flight information below belongs to the ticket you have purchased. The same information has been sent to your e-mail address and phone number you entered.</p>
                     </div>
-                </div>
-                <div v-if="returnFlightData">
-                    <div class="infoBox">DÖNÜŞ - {{returnFlightData.FlightDateTime | titleDateFormat}}</div>
-                    <div class="box">
-                        <div v-for="fdata in returnFlightData.FlightList">
-                            <div class="row mobileBTable">
-                                <div class="col-4">{{returnFlightData.AirWay}}</div>
-                                <div class="col doubleText">
-                                    <span class="text1">UÇUŞ NO:</span>
-                                    <span class="text2">
-                                        {{fdata.FlightNo}}
-                                    </span>
-                                </div>
-                                <div class="col doubleText">
-                                    <span class="text1">SINIF:</span>
-                                    <span class="text2">{{fdata.FlightClass}}</span>
-                                </div>
-                                <div class="col doubleText">
-                                    <span class="text1">BAGAJ:</span>
-                                    <span class="text2">{{fdata.BagInfo}}</span>
-                                </div>
-                            </div>
-                            <div class="customTable">
-                                <span class="time">{{fdata.DepartureTime}}</span>
-                                <span class="airport">
-                                    <span class="t1">KALKIŞ</span><br />
-                                    <span class="t2">{{fdata.DepartureCity}} - {{fdata.Departure}}</span>
-                                </span>
-                                <div class="clear m-t-10"></div>
-                                <span class="time">{{fdata.ArrivalTime}}</span>
-                                <span class="airport">
-                                    <span class="t1">KALKIŞ</span><br />
-                                    <span class="t2">{{fdata.ArrivalCity}} - {{fdata.Arrival}}</span>
-                                </span>
-                            </div>
+                    <section class="hMobile">
+                        <hr class="m-b-50" />
+                        <h2 class="title"><i class="icon icon-plane3"></i>FLIGHT INFORMATION</h2>
+                        <table class="customTable">
+                            <thead>
+                                <tr>
+                                    <th class="text-nowrap">DEPARTURE - 12 DECEMBER 2020 SATURDAY</th>
+                                    <th>DEPARTURE</th>
+                                    <th>ARRIVAL</th>
+                                    <th>FLIGHT NO</th>
+                                    <th>CLASS</th>
+                                    <th>LUGGAGE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="company">
+                                        <img src="assets/images/companies/pegasusIcon.png">
+                                        Pegasus AIRLINES
+                                    </td>
+                                    <td><span class="time">15:45</span> <span class="airport">London</span></td>
+                                    <td><span class="time">17:15</span> <span class="airport">Toronto</span></td>
+                                    <td>XQ9265</td>
+                                    <td>R</td>
+                                    <td>15 KG</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="customTable">
+                            <thead>
+                                <tr>
+                                    <th class="text-nowrap">RETURN - 18 DECEMBER 2020 SUNDAY</th>
+                                    <th>DEPARTURE</th>
+                                    <th>ARRIVAL</th>
+                                    <th>FLIGHT NO</th>
+                                    <th>CLASS</th>
+                                    <th>LUGGAGE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="company">
+                                        <img src="assets/images/companies/pegasusIcon.png">
+                                        Pegasus AIRLINES
+                                    </td>
+                                    <td><span class="time">21:45</span> <span class="airport">Toronto</span></td>
+                                    <td><span class="time">23:55</span> <span class="airport">London</span></td>
+                                    <td>UI98738</td>
+                                    <td>K</td>
+                                    <td>15 KG</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="title m-t-50"><i class="icon icon-man2 align-text-top"></i>PASSENGER INFORMATION</h2>
+                        <div class="m-b-20">
+                            <table class="customTable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            1. PASSENGER INFORMATION
+                                            <input type="hidden" autocomplete="off" required="required" name="PassengerType">
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <table class="passengerInfo customTable passengerInfoDetail">
+                                <tbody>
+                                    <tr>
+
+                                        <td>
+                                            <span>NAME</span>
+                                            <div>Frank</div>
+                                        </td>
+                                        <td>
+                                            <span>SURNAME</span>
+                                            <div>Vinson</div>
+                                        </td>
+                                        <td>
+                                            <span>BIRTHDATE</span>
+                                            <div>01.01.1990</div>
+                                        </td>
+                                        <td>
+                                            <span>GENDER</span>
+                                            <div>MALE</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+                        <h2 class="title m-t-50"><i class="icon icon-price"></i>PAYMENT INFORMATION</h2>
+                        <table class="customTable">
+                            <thead>
+                            <tr>
+                                <th class="text-left">PASSENGER</th>
+                                <th class="text-left">PRICE</th>
+                                <th class="text-left">TAX</th>
+                                <th class="text-left">SERVICE FEE</th>
+                                <th class="text-left">TOTAL</th>
+                            </tr>
+                            </thead>
+                            <tbody class="withTfoot">
+                            <tr>
+                                <td class="text-left percent35">1 ADULT</td>
+                                <td class="text-left">382.99 $</td>
+                                <td class="text-left">74.00 $</td>
+                                <td class="text-left">24.00 $</td>
+                                <td class="text-left total">480.99 $</td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th class="text-right no-padding">TOTAL PRICE:</th>
+                                <th class="text-left total">480.99 $</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <!-- BODY -->
+
+        <section class="subscribe">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="pull-left giftIcon" src="/assets/images/gift.png" alt="" />
+                        <p class="text uppercase">
+                            <span>Would you like to be Informed</span><br />
+                            about DISCOUNTS and PROMOTIONS?
+                        </p>
                     </div>
-                </div>
-
-
-
-
-                <h2 class="mobileTitleH2">Yolcu Bilgileri</h2>
-
-                <div v-for="(n,index) in passList" class="m-b-20">
-                    <div class="customTable infoBox2">
-                        <div class="col">
-                            {{index+1}}. YOLCU BİLGİLERİ
-                            <input type="hidden" autocomplete="off" required="required" name="PassengerType" :value="n[1]" />
-                        </div>
+                    <div class="col-md-6">
+                        <form class="searchBottomArea">
+                            <input type="text" name="Email" placeholder="Email Address" aria-label="Search" class="form-control">
+                            <button class="btn my-2 my-sm-0">SUBSCRIBE</button>
+                        </form>
                     </div>
-
-                    <div class="row contentBox passengerInfo passengerInfoDetail mobilePersonInfo">
-                        <div class="col-4 col-sm-3">
-                            <span>ADI</span>
-                            <div style="font-family: sf-medium;">{{n.Name}}</div>
-                        </div>
-                        <div class="col-4 col-sm">
-                            <span>SOYADI</span>
-                            <div style="font-family: sf-medium;">{{n.SurName}}</div>
-                        </div>
-                        <div class="col-4 col-sm">
-                            <span>TC KİMLİK NO</span>
-                            <div style="font-family: sf-medium;">{{n.CitizenNumber}}</div>
-                        </div>
-                        <div class="col-4 col-sm">
-                            <span>DOĞUM TARİHİ</span>
-                            <div style="font-family: sf-medium;">{{n.BirthDate}}</div>
-                        </div>
-                        <div class="col-4 col-sm">
-                            <span>CİNSİYET</span>
-                            <div style="font-family: sf-medium;">{{n.GenderType==0 ? 'Erkek' : 'Kadın' }}</div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <h2 class="mobileTitleH2">Fiyat Bilgileri</h2>
-                <div class="row infoBox2">
-                    <div class="col">YOLCU</div>
-                    <div class="col">FİYAT</div>
-                    <div class="col">VERGİ</div>
-                    <div class="col">H.BEDELİ</div>
-                    <div class="col">TOPLAM</div>
-                </div>
-                <div class="row contentBox" v-for="person in fareList.FareList">
-                    <div class="col">{{person.PassengerCount}} {{person.PassengerType}}</div>
-                    <div class="col">{{person.BasePrice}} {{person.Currency}}</div>
-                    <div class="col">{{person.Tax}} {{person.Currency}}</div>
-                    <div class="col">{{person.ServicesPrice}} {{person.Currency}}</div>
-                    <div class="col">{{person.TotalPrice}} {{person.Currency}}</div>
-
-                </div>
-                <div class="clearfix infoBox2 m-t-10">
-                    <div class="pull-left totalText">TOPLAM FİYAT</div>
-                    <div class="pull-right totalNumber">{{totalPriceV}} TRY</div>
                 </div>
             </div>
         </section>
+        <footer>
+            <div class="container">
+                <div class="footerMenu row">
+                    <div class="col-md-3">
+                        <p class="title">Airline Companies</p>
+                        <ul class="vertical">
+                            <li><a href="javascript:;">Pegasus</a></li>
+                            <li><a href="javascript:;">Turkish Airlines</a></li>
+                            <li><a href="javascript:;">Anadolujet</a></li>
+                            <li><a href="javascript:;">Atlasjet</a></li>
+                            <li><a href="javascript:;">Borajet</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                    <div class="col-md-3">
+                        <p class="title">About Our Company</p>
+                        <ul class="vertical">
+                            <li><a href="javascript:;">about Us</a></li>
+                            <li><a href="javascript:;">Our services</a></li>
+                            <li><a href="javascript:;">About Purchase</a></li>
+                            <li><a href="javascript:;">User Agreement</a></li>
+                            <li><a href="javascript:;">Contact us</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                    <div class="col-md-3">
+                        <p class="title">Popular Cities</p>
+                        <ul class="vertical city">
+                            <li><a href="javascript:;">Istanbul</a></li>
+                            <li><a href="javascript:;">Antalya</a></li>
+                            <li><a href="javascript:;">Ankara</a></li>
+                            <li><a href="javascript:;">İzmir</a></li>
+                            <li><a href="javascript:;">Barcelona</a></li>
+                            <li><a href="javascript:;">Madrid</a></li>
+                            <li><a href="javascript:;">Paris</a></li>
+                            <li><a href="javascript:;">California</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                    <div class="col-md-3">
+                        <p class="title">Help &amp; Support</p>
+                        <ul class="vertical">
+                            <li><a href="javascript:;">Terms of use</a></li>
+                            <li><a href="javascript:;">Confidentiality Agreement</a></li>
+                            <li><a href="javascript:;">After Sales Services</a></li>
+                            <li><a href="javascript:;">Service Agreement</a></li>
+                            <li><a href="javascript:;">Cancellation &amp; Refund Conditions</a></li>
+                        </ul>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
+            <div class="footerBottom">
+                <a href="javascript:;" class="footerArrow" id="scrollTop">
+                    <span class="icon icon-longarrow"></span>
+                </a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img class="pull-left" src="/assets/images/logo.png" alt="" />
+                            <span class="copyright">COPYRIGHT - 2020</span>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="pull-right m-l-30">
+                                <ul class="horizontal social pull-right">
+                                    <li><a href="javascript:;"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pull-right line hMobile">&nbsp;</div>
 
-
-    </section>
-</div>
-
-    <script src="/assets/js/utils.js"></script>
-    <script>
-        var vue = new Vue({
-            el: '#ticketVue',
-           created() {
-                this.getFlyInfo();
-
-            },
-            mounted: function () {
-                var that = this;
-                $(window).on('resize', function () {
-                    that.isMobile();
-                });
-                var w = document.documentElement.clientWidth;
-                if (w < 800)
-                    this.mobile = true;
-            },
-            data:{
-                isLoading:true,
-                flightData:[],
-                fareList:[],
-                returnFlightData:[],
-                banks:[],
-                selectedBank:[],
-                bankId:"",
-                bankInstallmentId:"",
-                pasInfo:[],
-                totalPriceV:0,
-                passList:[],
-                mobile: false,
-            },
-            methods: {
-                isMobile: function () {
-                    var w = document.documentElement.clientWidth;
-                    var h = document.documentElement.clientHeight;
-                    if (w < 800)
-                        this.mobile = true
-                    else
-                        this.mobile = false
-
-                },
-                totalPriceM:function(){
-                   var that = this;
-                    var total = 0;
-                    that.fareList.FareList.forEach(function (val) {
-                        total += val.TotalPrice * val.PassengerCount;
-                    });
-                    that.totalPriceV = total.toFixed(2);
-                }
-            }
-        });
-    </script>
+                            <div class="pull-right m-r-30 hMobile">
+                                <span class="footerNumber">
+                                    <span class="icon icon-phone"></span>0 (850) 123 45 67
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
