@@ -8,6 +8,10 @@
     "inputFile": "assets/sass/Loading.scss"
   },
   {
+    "outputFile": "assets/css/Contacts.css",
+    "inputFile": "assets/sass/Contacts.scss"
+  },
+  {
     "outputFile": "assets/css/SearchResult.css",
     "inputFile": "assets/sass/SearchResult.scss"
   }
