@@ -5,41 +5,13 @@
             $(this).parent(".countInputArea").find(".countInput").val(+inputVal - 1);
         countTotal();
     });
+
     $(".countInputArea .plus").on("click", function () {
         var inputVal = $(this).parent(".countInputArea").find(".countInput").val();
         $(this).parent(".countInputArea").find(".countInput").val(+inputVal + 1);
         countTotal();
-
-    });
-    $(".flyClass").on("change", function () {
-        countTotal();
-
-    });
-    $(".passengerSelect").on("click", function () {
-        $(".passengerArea").show();
     });
 
-    $(".fly-date").datepicker({
-        numberOfMonths: 2,
-    });
-
-    $(".searchInput .input").focus(function () {
-        $(".searchInput").removeClass("focus");
-        $(this).parents(".searchInput").addClass("focus");
-    });
-    $(".searchInput").on("click", function () {
-        $(this).find(".input").focus();
-    });
-    $("footer .footerMenu > div p.title").on("click", function () {
-        $(this).next("ul").slideToggle();
-        $(this).toggleClass("active");
-    });
-    $(".showMobileMenu").on("click", function () {
-        $("body").addClass("activeMenu");
-    });
-    $(".closeMobileMenu").on("click", function () {
-        $("body").removeClass("activeMenu");
-    });
     $(".flyType li").click(function () {
         $(".flyType li").removeClass("active");
         $(this).addClass("active");
@@ -55,18 +27,9 @@
             $(".last-col").show();
         }
     });
-    $(".flyType li:first").click();
-    $("body").on("click", "footer .footerMenu > div p.title", function () {
-        $(this).next("ul").slideToggle();
-        $(this).toggleClass("active");
-    });
 
-    $("body").on("click", ".showMobileMenu", function () {
-        $("body").addClass("activeMenu");
-    });
-    $("body").on("click", ".closeMobileMenu", function () {
-        $("body").removeClass("activeMenu");
-    });
+    $(".flyType li:first").click();
+
     $(".companiesSlider").owlCarousel({
         loop: true,
         margin: 0,
@@ -86,28 +49,4 @@
             }
         }
     });
-
-
-    $("#first-place").focusout(function () {
-        setTimeout(function () {
-            if ($("#first-place-hidden").val() < 2) {
-                $("#first-place").val("");
-            }
-        },
-            500);
-    });
-
-    $("#second-place").focusout(function () {
-        setTimeout(function () {
-            if ($("#second-place-hidden").val() < 2) {
-                $("#second-place").val("");
-            }
-        },
-            500);
-    });
-    $(".passengerBtn").click(function () {
-        $(".passengerArea").hide();
-    });
-
-    mouseOutClose(".passengerArea");
 });
