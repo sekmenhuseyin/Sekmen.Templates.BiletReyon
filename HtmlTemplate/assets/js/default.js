@@ -22,17 +22,6 @@
     $(".fly-date").datepicker({
         numberOfMonths: 2,
     });
-    $("#first-date").datepicker({
-        minDate: new Date(),
-        onClose: function (selectedDate) {
-            $("#second-date").datepicker("option", "minDate", selectedDate);
-        }
-    });
-    $("#second-date").datepicker({
-        onClose: function (selectedDate) {
-            $("#first-date").datepicker("option", "maxDate", selectedDate);
-        }
-    });
 
     $(".searchInput .input").focus(function () {
         $(".searchInput").removeClass("focus");

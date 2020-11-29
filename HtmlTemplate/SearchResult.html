@@ -20,10 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" rel="stylesheet" />
-    <link href="/assets/plugins/auto-complete.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
     <link href="/assets/css/layout.css" rel="stylesheet" />
     <link href="assets/css/SearchResult.css" rel="stylesheet" />
 </head>
@@ -114,7 +111,7 @@
                                     </div>
                                     <div class="pull-left">
                                         <span class="title">FROM</span>
-                                        <input autocomplete="off" id="first-place" type="text" name="DepartureName" required="required" value="London" class="input" placeholder="City, Airport">
+                                        <input autocomplete="off" type="text" name="DepartureName" required="required" value="London" class="input" placeholder="City, Airport">
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +122,7 @@
                                     </div>
                                     <div>
                                         <span class="title">TO</span>
-                                        <input autocomplete="off" id="second-place" type="text" name="ArrivalName" required="required" value="Toronto" class="input" placeholder="City, Airport">
+                                        <input autocomplete="off" type="text" name="ArrivalName" required="required" value="Toronto" class="input" placeholder="City, Airport">
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +131,7 @@
                                     <div><span class="icon icon-calendar-white"></span></div>
                                     <div>
                                         <span class="title">DEPARTURE DATE</span>
-                                        <input autocomplete="on" id="first-date" type="text" name="DepartureDate" placeholder="Select a date" value="12.12.2020" required="required" class="input hasDatepicker">
+                                        <input autocomplete="off" type="text" name="DepartureDate" placeholder="Select a date" value="12.12.2020" required="required" class="input datepicker">
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +142,7 @@
                                     </div>
                                     <div>
                                         <span class="title">RETURN DATE</span>
-                                        <input autocomplete="on" id="second-date" type="text" name="ArrivalDate" placeholder="Select a date" value="18.12.2020" class="input hasDatepicker">
+                                        <input autocomplete="off" type="text" name="ArrivalDate" placeholder="Select a date" value="18.12.2020" class="input datepicker">
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +214,7 @@
                             <i aria-hidden="true" class="fa fa-angle-left"></i>
                             <i aria-hidden="true" class="fa fa-angle-left"></i>
                             PREVIOUS DAY
-                        </span> 
+                        </span>
                         <span class="pull-right text">
                             NEXT DAY
                             <i aria-hidden="true" class="fa fa-angle-right"></i>
@@ -357,7 +354,7 @@
                             <i aria-hidden="true" class="fa fa-angle-left"></i>
                             <i aria-hidden="true" class="fa fa-angle-left"></i>
                             PREVIOUS DAY
-                        </span> 
+                        </span>
                         <span class="pull-right text" style="cursor: pointer;">
                             NEXT DAY
                             <i aria-hidden="true" class="fa fa-angle-right"></i>
@@ -365,7 +362,7 @@
                         </span>
                         <div class="clear"></div>
                         <p class="title m-auto text-center">12 DECEMBER 2020 SATURDAY</p>
-                    </div> 
+                    </div>
                     <div class="body">
                         <div class="tableCon">
                             <div class="tableHead row">
@@ -635,10 +632,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
-    <script src="/assets/plugins/auto-complete.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/searchResult.js"></script>
 </body>
