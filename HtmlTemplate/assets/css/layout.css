@@ -15638,6 +15638,21 @@ a, a:hover, a:visited, a:focus {
   font-style: normal; }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .innerContent .innerSearch .findTicket {
+    height: 30px;
+    font-size: 10px;
+    line-height: 20px !important; }
+  .innerContent .innerSearch .row > div {
+    max-width: 159px;
+    overflow: hidden; }
+  .innerContent .searchResult .body .tableCon .tableBody .flyItem .companyName {
+    min-width: 170px; }
+  .innerContent .searchResult .body .landingTimeContainer {
+    min-width: 110px; }
+  .innerContent .searchResult .body .timeContainer {
+    max-width: 129px; }
+  .innerContent .searchResult .body .landingTimeContainer {
+    min-width: 110px; }
   body {
     overflow-x: hidden; }
   header .topHeader .navbar-brand {
@@ -15650,10 +15665,10 @@ a, a:hover, a:visited, a:focus {
     text-align: center; }
   .mainContent .offerArea ul li .offerContent {
     padding: 60px 0 20px 15px; }
-  .mainContent .offerArea ul li .offerContent .detailBtn {
-    margin: 10px auto 0;
-    max-width: 130px;
-    width: 100%; }
+    .mainContent .offerArea ul li .offerContent .detailBtn {
+      margin: 10px auto 0;
+      max-width: 130px;
+      width: 100%; }
   .welcomeBottomArea > div {
     text-align: center;
     display: block;
@@ -15664,7 +15679,22 @@ a, a:hover, a:visited, a:focus {
       float: none;
       display: inline-block; } }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (min-width: 700px) and (max-width: 980px) {
+  html body .innerContent .searchResult.searchResultM .body .tableCon div.tableBody div.flyItem .row > div.landingTimeContainer {
+    min-width: auto !important;
+    max-width: none !important; } }
+
+@media only screen and (max-width: 980px) {
+  html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .row > div {
+    padding: 0 3px !important; }
+  .bComplate {
+    margin: 20px auto 20px; }
+    .bComplate img {
+      width: 100px; }
+    .bComplate .bTitle {
+      font-size: 20px; }
+    .bComplate .bText {
+      font-size: 16px; }
   .mobileTitleH2 {
     font-family: sf-semibold;
     font-size: 24px;
@@ -15705,7 +15735,7 @@ a, a:hover, a:visited, a:focus {
       .buyingMobile .infoBox2 > div {
         padding: 10px;
         font-family: sf-bold;
-        font-size: 14px; }
+        font-size: 13px; }
     .buyingMobile .totalText {
       color: #e0252f !important;
       font-family: sf-bold !important;
@@ -15799,7 +15829,7 @@ a, a:hover, a:visited, a:focus {
       margin: 12px 5px 0;
       background: #fff;
       font-size: 13px; }
-      .buyingMobile .buyingFormMobile .genderBtn:hover {
+      .buyingMobile .buyingFormMobile .genderBtn:hover, .buyingMobile .buyingFormMobile .genderBtn.selected {
         background-color: #e0252f;
         color: #fff;
         border-color: #e0252f;
@@ -15844,7 +15874,6 @@ a, a:hover, a:visited, a:focus {
     max-width: none; }
   .innerContent .innerSearch .container {
     display: none; }
-  /*arama detay*/
   html body .innerContent .searchResult.searchResultM .header {
     background-color: #f9b641;
     margin: -30px -15px 0;
@@ -15867,25 +15896,27 @@ a, a:hover, a:visited, a:focus {
     html body .innerContent .searchResult.searchResultM .header .text {
       background-color: #e0252f;
       padding: 10px 20px;
-      line-height: 41px;
-      white-space: nowrap; }
-    html body .innerContent .searchResult.searchResultM .header .text:nth-child(1) {
-      order: 1; }
-    html body .innerContent .searchResult.searchResultM .header .text:nth-child(2) {
-      order: 3; }
+      line-height: normal; }
+      html body .innerContent .searchResult.searchResultM .header .text .fa {
+        display: none; }
+      html body .innerContent .searchResult.searchResultM .header .text:nth-child(1) {
+        order: 1; }
+      html body .innerContent .searchResult.searchResultM .header .text:nth-child(2) {
+        order: 3;
+        text-align: right; }
   html body .innerContent .searchResult.searchResultM .body {
     background: none;
     padding: 15px; }
     html body .innerContent .searchResult.searchResultM .body .tableCon .tableHead {
       background-color: #e9edef; }
-    html body .innerContent .searchResult.searchResultM .body .tableCon .tableHead > div {
-      min-width: auto !important;
-      white-space: nowrap;
-      max-width: none; }
-      html body .innerContent .searchResult.searchResultM .body .tableCon .tableHead > div:first-child {
-        min-width: 130px !important;
-        max-width: 130px !important;
-        font-size: 13px; }
+      html body .innerContent .searchResult.searchResultM .body .tableCon .tableHead > div {
+        min-width: auto !important;
+        white-space: nowrap;
+        max-width: none; }
+        html body .innerContent .searchResult.searchResultM .body .tableCon .tableHead > div:first-child {
+          min-width: 130px !important;
+          max-width: 130px !important;
+          font-size: 13px; }
     html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem {
       background-color: #fff;
       border-radius: 5px;
@@ -15910,7 +15941,7 @@ a, a:hover, a:visited, a:focus {
       html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .time {
         margin-top: -5px;
         display: block;
-        text-align: left; }
+        text-align: left !important; }
       html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem span {
         display: inline-block; }
       html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .row:nth-child(2) {
@@ -15929,13 +15960,16 @@ a, a:hover, a:visited, a:focus {
         max-width: none !important;
         min-width: auto !important;
         width: auto; }
+        html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .row > div.landingTimeContainer {
+          min-width: 100px !important;
+          max-width: 100px !important; }
       html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .row > .companyName {
-        min-width: 130px !important;
-        max-width: 130px !important;
+        min-width: 120px !important;
+        max-width: 120px !important;
         font-size: 15px;
         line-height: 17px; }
         html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .row > .companyName .airportShort {
-          font-size: 14px;
+          font-size: 12px;
           color: #696969;
           display: block;
           font-family: sf-semibold; }
@@ -15953,84 +15987,22 @@ a, a:hover, a:visited, a:focus {
             line-height: 15px;
             border-radius: 100%;
             font-size: 11px; }
-      html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .hour {
-        font-size: 18px;
-        font-family: sf-semibold; }
-      html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .price {
+      html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .hour, html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .price {
         font-size: 18px;
         font-family: sf-semibold; }
       html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .align-self-center {
-        white-space: nowrap; }
+        white-space: nowrap;
+        text-align: left !important; }
       html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .chooseBtn {
+        height: 33px;
         border-radius: 5px;
         background-color: #e0252f;
         width: auto;
-        padding: 0 20px; }
+        padding: 0 10px;
+        float: right;
+        font-size: 12px; }
         html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .chooseBtn i {
           display: none; }
-      html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow {
-        text-align: left;
-        padding-top: 20px;
-        border-top: 1px solid #f2f2f2;
-        margin: 20px -15px 0;
-        padding: 20px 15px 0 15px; }
-        html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow p {
-          font-family: sf-medium;
-          font-size: 16px; }
-          html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow p span {
-            display: inline-block;
-            margin-left: 15px; }
-        html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow ul {
-          padding: 0 0 0 40px;
-          margin: 0;
-          list-style-type: none; }
-          html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow ul li {
-            position: relative;
-            margin-bottom: 10px;
-            font-size: 14px;
-            font-family: sf-medium;
-            color: #3d3b3b;
-            padding-top: 1px;
-            padding-left: 5px;
-            min-height: 26px; }
-            html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow ul li:last-child span {
-              display: none; }
-            html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow ul li span {
-              background-color: #e0252f;
-              content: " ";
-              height: 34px;
-              width: 2px;
-              display: block;
-              position: absolute;
-              left: -13px;
-              top: 20px; }
-            html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow ul li::before {
-              background-color: #e0252f;
-              content: " ";
-              height: 15px;
-              width: 15px;
-              display: block;
-              border-radius: 100%;
-              position: absolute;
-              left: -20px;
-              top: 5px;
-              border: 4px solid #fff;
-              box-shadow: 0 0 0px 2px #e0252f; }
-        html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow .drowBottom {
-          padding-top: 10px; }
-          html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow .drowBottom i {
-            font-size: 12px;
-            background-color: #f9b641;
-            color: #fff;
-            height: 20px;
-            width: 20px;
-            border-radius: 100%;
-            text-align: center;
-            line-height: 20px; }
-          html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .detailRow .drowBottom span {
-            font-family: sf-medium;
-            font-size: 14px; }
-  /*arama detay sonu*/
   .mobileTopMenu {
     display: block !important; }
   .ticketFilterArea .icon-change {
@@ -16055,6 +16027,11 @@ a, a:hover, a:visited, a:focus {
   .container {
     width: 100% !important;
     max-width: 100% !important; }
+  .innerContent .container {
+    padding-left: 0;
+    padding-right: 0; }
+  .searchResult {
+    padding: 0 5px; }
   header {
     background: #ffffff; }
     header .topHeader {
@@ -16063,17 +16040,17 @@ a, a:hover, a:visited, a:focus {
       header .topHeader + .bg-white {
         display: none; }
   .banner {
-    background: #f8b541;
-    height: auto;
+    background: #f8b541 !important;
+    height: auto !important;
     padding: 20px 20px 30px 20px; }
     .banner .container {
       padding: 0; }
     .banner .ticketBg {
-      float: none;
-      width: 100%;
+      float: none !important;
+      width: 100% !important;
       height: auto;
-      margin: 0 auto;
-      max-width: 100%;
+      margin: 0 auto !important;
+      max-width: 100% !important;
       padding: 0;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px; }
@@ -16096,10 +16073,6 @@ a, a:hover, a:visited, a:focus {
           border: none;
           background-color: #f3f3f3;
           color: #3d3b3b;
-          -webkit-transition: all 0.5s ease;
-          -moz-transition: all 0.5s ease;
-          -ms-transition: all 0.5s ease;
-          -o-transition: all 0.5s ease;
           transition: all 0.5s ease;
           font-size: 18px;
           line-height: 22px; }
@@ -16129,84 +16102,102 @@ a, a:hover, a:visited, a:focus {
               margin: 1px 20px 4px 0; }
             .banner .ticketBg .row .col .searchInput .input {
               font-size: 18px; }
-      .banner .ticketBg .searchBtnCon {
-        /*padding: 30px 40px 10px 40px;*/ }
   footer {
     background: white; }
-  footer .footerMenu > div p.title {
-    background-color: #f7f7f7;
-    font-size: 24px;
-    border-radius: 10px;
-    padding: 20px 30px;
-    margin-bottom: 10px;
-    cursor: pointer; }
-  footer .footerMenu > div p.title:before {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    content: "\f0da";
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    color: #e0252f;
-    margin-top: -11px; }
-  footer .footerMenu > div p.title.active:after {
-    content: "\f107";
-    background-color: #e0252f;
-    color: #fff; }
-  footer .footerMenu > div p.title:after {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    content: "\f105";
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    color: #e0252f;
-    margin-top: -20px;
-    background: none;
-    height: 40px;
-    background: #ffffff;
-    width: 40px;
-    left: auto;
-    right: 19px;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 40px;
-    box-shadow: 0 0 12px 3px #eee; }
-  footer .footerMenu > div ul li a:after {
-    color: #3d3b3b; }
-  footer .footerMenu > div ul {
-    margin-left: 15px;
-    margin-bottom: 20px;
-    display: none; }
+    footer .footerMenu > div p.title {
+      background-color: #f7f7f7;
+      font-size: 24px;
+      border-radius: 10px;
+      padding: 20px 30px;
+      margin-bottom: 10px;
+      cursor: pointer; }
+      footer .footerMenu > div p.title:before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        content: "\f0da";
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        color: #e0252f;
+        margin-top: -11px; }
+      footer .footerMenu > div p.title.active:after {
+        content: "\f107";
+        background-color: #e0252f;
+        color: #fff; }
+      footer .footerMenu > div p.title:after {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        content: "\f105";
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        color: #e0252f;
+        margin-top: -20px;
+        background: none;
+        height: 40px;
+        background: #ffffff;
+        width: 40px;
+        left: auto;
+        right: 19px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 40px;
+        box-shadow: 0 0 12px 3px #eee; }
+    footer .footerMenu > div ul {
+      margin-left: 15px;
+      margin-bottom: 20px;
+      display: none; }
+      footer .footerMenu > div ul li a:after {
+        color: #3d3b3b; }
   .copyright, .footerNumberHide {
     display: none !important; } }
 
 @media only screen and (max-width: 626px) {
-  .callUs i.icon-m {
-    margin-right: 10px; }
+  .innerContent .innerSearch .searchInput {
+    overflow: hidden; }
+    .innerContent .innerSearch .searchInput .input {
+      width: 100px; }
+  .autocomplete-suggestions {
+    left: 0 !important;
+    width: 100% !important;
+    margin: 0 !important; }
+  .buyingMobile .optionsSelect {
+    line-height: normal !important; }
+  html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .row > div.companyName {
+    min-width: 100px !important;
+    max-width: 100px !important;
+    font-size: 12px;
+    line-height: 17px; }
+  html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .price {
+    font-size: 12px; }
+  html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .hour {
+    font-size: 12px;
+    font-family: sf-semibold; }
+  html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .seatCount {
+    font-size: 11px; }
   .callUs {
     padding: 20px 30px; }
-  .callUs div {
-    vertical-align: text-bottom; }
-  .callUs div .title {
-    font-size: 16px;
-    line-height: 16px; }
-  .callUs div .text {
-    font-size: 20px; }
-  .callUs a {
-    margin-top: 0; }
+    .callUs i.icon-m {
+      margin-right: 10px; }
+    .callUs div {
+      vertical-align: text-bottom; }
+      .callUs div .title {
+        font-size: 16px;
+        line-height: 16px; }
+      .callUs div .text {
+        font-size: 20px; }
+    .callUs a {
+      margin-top: 0; }
   .welcomeIcons .col {
     width: 100% !important;
     display: block !important;
     flex: none; }
     .welcomeIcons .col div {
       height: auto !important; }
-  div.flyItem > .row > div:last-child {
-    display: none !important; }
   div.flyItem .detailRow .drowBottom i {
     font-size: 9px !important;
     height: 15px !important;

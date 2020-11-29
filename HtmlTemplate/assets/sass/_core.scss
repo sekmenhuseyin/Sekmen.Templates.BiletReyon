@@ -304,61 +304,113 @@ a, a:hover, a:visited, a:focus {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .innerContent {
+        .innerSearch {
+            .findTicket {
+                height: 30px;
+                font-size: 10px;
+                line-height: 20px !important;
+            }
+
+            .row > div {
+                max-width: 159px;
+                overflow: hidden;
+            }
+        }
+
+        .searchResult .body {
+            .tableCon .tableBody .flyItem .companyName {
+                min-width: 170px;
+            }
+
+            .landingTimeContainer {
+                min-width: 110px;
+            }
+
+            .timeContainer {
+                max-width: 129px;
+            }
+
+            .landingTimeContainer {
+                min-width: 110px;
+            }
+        }
+    }
+
     body {
         overflow-x: hidden;
     }
 
-    header {
-        .topHeader {
-            .navbar-brand {
-                width: 150px;
+    header .topHeader {
+        .navbar-brand {
+            width: 150px;
 
-                img {
-                    width: 100%;
-                }
+            img {
+                width: 100%;
             }
+        }
 
-            .searchArea {
-                .form-control {
-                    width: 200px;
-                }
-            }
+        .searchArea .form-control {
+            width: 200px;
+        }
 
-            .topMenu {
-                a {
-                    text-align: center;
-                }
-            }
+        .topMenu a {
+            text-align: center;
         }
     }
 
     .mainContent .offerArea ul li .offerContent {
         padding: 60px 0 20px 15px;
-    }
 
-    .mainContent .offerArea ul li .offerContent .detailBtn {
-        margin: 10px auto 0;
-        max-width: 130px;
-        width: 100%;
-    }
-
-    .welcomeBottomArea {
-        > div {
-            text-align: center;
-            display: block;
-            flex: none;
+        .detailBtn {
+            margin: 10px auto 0;
+            max-width: 130px;
             width: 100%;
-            margin: 5px 0;
+        }
+    }
 
-            .horizontal li {
-                float: none;
-                display: inline-block;
-            }
+    .welcomeBottomArea > div {
+        text-align: center;
+        display: block;
+        flex: none;
+        width: 100%;
+        margin: 5px 0;
+
+        .horizontal li {
+            float: none;
+            display: inline-block;
         }
     }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (min-width: 700px) and (max-width: 980px) {
+    html body .innerContent .searchResult.searchResultM .body .tableCon div.tableBody div.flyItem .row > div.landingTimeContainer {
+        min-width: auto !important;
+        max-width: none !important;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem .row > div {
+        padding: 0 3px !important;
+    }
+
+    .bComplate {
+        margin: 20px auto 20px;
+
+        img {
+            width: 100px;
+        }
+
+        .bTitle {
+            font-size: 20px;
+        }
+
+        .bText {
+            font-size: 16px;
+        }
+    }
+
     .mobileTitleH2 {
         font-family: sf-semibold;
         font-size: 24px;
@@ -373,7 +425,7 @@ a, a:hover, a:visited, a:focus {
             height: 3px;
             width: 20%;
             z-index: 5;
-            background-color: $red;
+            background-color: #e0252f;
         }
 
         &:after {
@@ -387,7 +439,7 @@ a, a:hover, a:visited, a:focus {
             background-color: #e9edef;
         }
     }
-    //buying
+
     .buyingMobile {
         background: none !important;
         padding: 0 15px 15px 15px !important;
@@ -409,19 +461,19 @@ a, a:hover, a:visited, a:focus {
             > div {
                 padding: 10px;
                 font-family: sf-bold;
-                font-size: 14px;
+                font-size: 13px;
             }
         }
 
         .totalText {
-            color: $red !important;
+            color: #e0252f !important;
             font-family: sf-bold !important;
             font-size: 15px !important;
             padding-top: 13px;
         }
 
         .totalNumber {
-            color: $red !important;
+            color: #e0252f !important;
             font-family: sf-bold !important;
             font-size: 18px !important;
         }
@@ -544,10 +596,10 @@ a, a:hover, a:visited, a:focus {
                 background: #fff;
                 font-size: 13px;
 
-                &:hover {
-                    background-color: $red;
+                &:hover, &.selected {
+                    background-color: #e0252f;
                     color: #fff;
-                    border-color: $red;
+                    border-color: #e0252f;
                     text-decoration: none;
                 }
             }
@@ -559,7 +611,7 @@ a, a:hover, a:visited, a:focus {
             border-radius: 5px;
 
             img {
-                margin: 0,
+                margin: 0;
             }
         }
 
@@ -604,7 +656,6 @@ a, a:hover, a:visited, a:focus {
         }
     }
 
-    //buying end
     .innerContent .innerSearch {
         .row > div {
             max-width: none;
@@ -614,10 +665,10 @@ a, a:hover, a:visited, a:focus {
             display: none;
         }
     }
-    /*arama detay*/
+
     html body .innerContent .searchResult.searchResultM {
         .header {
-            background-color: $orange;
+            background-color: #f9b641;
             margin: -30px -15px 0;
             height: auto;
             padding: 15px;
@@ -641,18 +692,22 @@ a, a:hover, a:visited, a:focus {
             }
 
             .text {
-                background-color: $red;
+                background-color: #e0252f;
                 padding: 10px 20px;
-                line-height: 41px;
-                white-space: nowrap;
-            }
+                line-height: normal;
 
-            .text:nth-child(1) {
-                order: 1;
-            }
+                .fa {
+                    display: none;
+                }
 
-            .text:nth-child(2) {
-                order: 3;
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    order: 3;
+                    text-align: right;
+                }
             }
         }
 
@@ -663,17 +718,17 @@ a, a:hover, a:visited, a:focus {
             .tableCon {
                 .tableHead {
                     background-color: #e9edef;
-                }
 
-                .tableHead > div {
-                    min-width: auto !important;
-                    white-space: nowrap;
-                    max-width: none;
+                    > div {
+                        min-width: auto !important;
+                        white-space: nowrap;
+                        max-width: none;
 
-                    &:first-child {
-                        min-width: 130px !important;
-                        max-width: 130px !important;
-                        font-size: 13px;
+                        &:first-child {
+                            min-width: 130px !important;
+                            max-width: 130px !important;
+                            font-size: 13px;
+                        }
                     }
                 }
 
@@ -710,185 +765,104 @@ a, a:hover, a:visited, a:focus {
                     .time {
                         margin-top: -5px;
                         display: block;
-                        text-align: left;
+                        text-align: left !important;
                     }
 
                     span {
                         display: inline-block;
                     }
 
-                    .row:nth-child(2) {
-                        padding-top: 10px;
-                        margin-top: 10px;
-                        position: relative;
+                    .row {
+                        &:nth-child(2) {
+                            padding-top: 10px;
+                            margin-top: 10px;
+                            position: relative;
 
-                        &:before {
-                            content: " ";
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            height: 1px;
-                            background-color: #eee;
-                            width: 55%;
-                        }
-                    }
-
-                    .row > div {
-                        max-width: none !important;
-                        min-width: auto !important;
-                        width: auto;
-                    }
-
-                    .row > .companyName {
-                        min-width: 130px !important;
-                        max-width: 130px !important;
-                        font-size: 15px;
-                        line-height: 17px;
-
-                        .airportShort {
-                            font-size: 14px;
-                            color: #696969;
-                            display: block;
-                            font-family: sf-semibold;
+                            &:before {
+                                content: " ";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 1px;
+                                background-color: #eee;
+                                width: 55%;
+                            }
                         }
 
-                        .detailText {
-                            color: #e0252f;
-                            font-size: 13px;
-                            font-family: sf-semibold;
+                        > {
+                            div {
+                                max-width: none !important;
+                                min-width: auto !important;
+                                width: auto;
 
-                            i {
-                                background-color: red;
-                                display: inline-block;
-                                color: #fff;
-                                height: 13px;
-                                width: 13px;
-                                text-align: center;
-                                line-height: 15px;
-                                border-radius: 100%;
-                                font-size: 11px;
+                                &.landingTimeContainer {
+                                    min-width: 100px !important;
+                                    max-width: 100px !important;
+                                }
+                            }
+
+                            .companyName {
+                                min-width: 120px !important;
+                                max-width: 120px !important;
+                                font-size: 15px;
+                                line-height: 17px;
+
+                                .airportShort {
+                                    font-size: 12px;
+                                    color: #696969;
+                                    display: block;
+                                    font-family: sf-semibold;
+                                }
+
+                                .detailText {
+                                    color: #e0252f;
+                                    font-size: 13px;
+                                    font-family: sf-semibold;
+
+                                    i {
+                                        background-color: red;
+                                        display: inline-block;
+                                        color: #fff;
+                                        height: 13px;
+                                        width: 13px;
+                                        text-align: center;
+                                        line-height: 15px;
+                                        border-radius: 100%;
+                                        font-size: 11px;
+                                    }
+                                }
                             }
                         }
                     }
 
-                    .hour {
-                        font-size: 18px;
-                        font-family: sf-semibold;
-                    }
-
-                    .price {
+                    .hour, .price {
                         font-size: 18px;
                         font-family: sf-semibold;
                     }
 
                     .align-self-center {
                         white-space: nowrap;
-                    }
-
-                    .col.d-flex {
+                        text-align: left !important;
                     }
 
                     .chooseBtn {
+                        height: 33px;
                         border-radius: 5px;
                         background-color: #e0252f;
                         width: auto;
-                        padding: 0 20px;
+                        padding: 0 10px;
+                        float: right;
+                        font-size: 12px;
 
                         i {
                             display: none;
-                        }
-                    }
-
-                    .detailRow {
-                        text-align: left;
-                        padding-top: 20px;
-                        border-top: 1px solid #f2f2f2;
-                        margin: 20px -15px 0;
-                        padding: 20px 15px 0 15px;
-
-                        p {
-                            font-family: sf-medium;
-                            font-size: 16px;
-
-                            span {
-                                display: inline-block;
-                                margin-left: 15px;
-                            }
-                        }
-
-                        ul {
-                            padding: 0 0 0 40px;
-                            margin: 0;
-                            list-style-type: none;
-
-                            li {
-                                position: relative;
-                                margin-bottom: 10px;
-                                font-size: 14px;
-                                font-family: sf-medium;
-                                color: #3d3b3b;
-                                padding-top: 1px;
-                                padding-left: 5px;
-                                min-height: 26px;
-
-                                &:last-child {
-                                    span {
-                                        display: none;
-                                    }
-                                }
-
-                                span {
-                                    background-color: #e0252f;
-                                    content: " ";
-                                    height: 34px;
-                                    width: 2px;
-                                    display: block;
-                                    position: absolute;
-                                    left: -13px;
-                                    top: 20px;
-                                }
-
-                                &::before {
-                                    background-color: #e0252f;
-                                    content: " ";
-                                    height: 15px;
-                                    width: 15px;
-                                    display: block;
-                                    border-radius: 100%;
-                                    position: absolute;
-                                    left: -20px;
-                                    top: 5px;
-                                    border: 4px solid #fff;
-                                    box-shadow: 0 0 0px 2px #e0252f;
-                                }
-                            }
-                        }
-
-                        .drowBottom {
-                            padding-top: 10px;
-
-                            i {
-                                font-size: 12px;
-                                background-color: #f9b641;
-                                color: #fff;
-                                height: 20px;
-                                width: 20px;
-                                border-radius: 100%;
-                                text-align: center;
-                                line-height: 20px;
-                            }
-
-                            span {
-                                font-family: sf-medium;
-                                font-size: 14px;
-                            }
                         }
                     }
                 }
             }
         }
     }
-    /*arama detay sonu*/
+
     .mobileTopMenu {
         display: block !important;
     }
@@ -898,14 +872,16 @@ a, a:hover, a:visited, a:focus {
         transform: rotate(90deg);
     }
 
-    .subscribe .text {
-        font-size: 18px;
-        line-height: 26px;
-        margin-bottom: 30px
-    }
+    .subscribe {
+        .text {
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 30px;
+        }
 
-    .subscribe .searchBottomArea .btn {
-        top: 2px;
+        .searchBottomArea .btn {
+            top: 2px;
+        }
     }
 
     .hMobile {
@@ -915,10 +891,8 @@ a, a:hover, a:visited, a:focus {
     .sMobile {
         display: block;
 
-        .offerArea {
-            .bx-wrapper {
-                max-width: 100% !important;
-            }
+        .offerArea .bx-wrapper {
+            max-width: 100% !important;
         }
     }
 
@@ -935,22 +909,31 @@ a, a:hover, a:visited, a:focus {
         max-width: 100% !important;
     }
 
+    .innerContent .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .searchResult {
+        padding: 0 5px;
+    }
+
     header {
         background: #ffffff;
 
         .topHeader {
             background: #ffffff;
-            border-bottom: 2px solid $red;
+            border-bottom: 2px solid #e0252f;
 
-            & + .bg-white {
+            + .bg-white {
                 display: none;
             }
         }
     }
 
     .banner {
-        background: #f8b541;
-        height: auto;
+        background: #f8b541 !important;
+        height: auto !important;
         padding: 20px 20px 30px 20px;
 
         .container {
@@ -958,11 +941,11 @@ a, a:hover, a:visited, a:focus {
         }
 
         .ticketBg {
-            float: none;
-            width: 100%;
+            float: none !important;
+            width: 100% !important;
             height: auto;
-            margin: 0 auto;
-            max-width: 100%;
+            margin: 0 auto !important;
+            max-width: 100% !important;
             padding: 0;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
@@ -991,7 +974,7 @@ a, a:hover, a:visited, a:focus {
                     border: none;
                     background-color: #f3f3f3;
                     color: #3d3b3b;
-                    @include transition(all .5s ease);
+                    transition: all 0.5s ease;
                     font-size: 18px;
                     line-height: 22px;
 
@@ -1004,7 +987,7 @@ a, a:hover, a:visited, a:focus {
                     }
 
                     &.active {
-                        background-color: $red;
+                        background-color: #e0252f;
                         color: #fff;
                     }
                 }
@@ -1042,76 +1025,74 @@ a, a:hover, a:visited, a:focus {
                     }
                 }
             }
-
-            .searchBtnCon {
-                /*padding: 30px 40px 10px 40px;*/
-            }
         }
     }
 
     footer {
         background: white;
-    }
 
-    footer .footerMenu > div p.title {
-        background-color: #f7f7f7;
-        font-size: 24px;
-        border-radius: 10px;
-        padding: 20px 30px;
-        margin-bottom: 10px;
-        cursor: pointer;
-    }
+        .footerMenu > div {
+            p.title {
+                background-color: #f7f7f7;
+                font-size: 24px;
+                border-radius: 10px;
+                padding: 20px 30px;
+                margin-bottom: 10px;
+                cursor: pointer;
 
-    footer .footerMenu > div p.title:before {
-        display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-        content: "\f0da";
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        color: #e0252f;
-        margin-top: -11px;
-    }
+                &:before {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    content: "\f0da";
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    color: #e0252f;
+                    margin-top: -11px;
+                }
 
-    footer .footerMenu > div p.title.active:after {
-        content: "\f107";
-        background-color: #e0252f;
-        color: #fff;
-    }
+                &.active:after {
+                    content: "\f107";
+                    background-color: #e0252f;
+                    color: #fff;
+                }
 
-    footer .footerMenu > div p.title:after {
-        display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-        content: "\f105";
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        color: #e0252f;
-        margin-top: -20px;
-        background: none;
-        height: 40px;
-        background: #ffffff;
-        width: 40px;
-        left: auto;
-        right: 19px;
-        border-radius: 100%;
-        text-align: center;
-        line-height: 40px;
-        box-shadow: 0 0 12px 3px #eee;
-    }
+                &:after {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    content: "\f105";
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    color: #e0252f;
+                    margin-top: -20px;
+                    background: none;
+                    height: 40px;
+                    background: #ffffff;
+                    width: 40px;
+                    left: auto;
+                    right: 19px;
+                    border-radius: 100%;
+                    text-align: center;
+                    line-height: 40px;
+                    box-shadow: 0 0 12px 3px #eee;
+                }
+            }
 
-    footer .footerMenu > div ul li a:after {
-        color: #3d3b3b;
-    }
+            ul {
+                li a:after {
+                    color: #3d3b3b;
+                }
 
-    footer .footerMenu > div ul {
-        margin-left: 15px;
-        margin-bottom: 20px;
-        display: none;
+                margin-left: 15px;
+                margin-bottom: 20px;
+                display: none;
+            }
+        }
     }
 
     .copyright, .footerNumberHide {
@@ -1120,60 +1101,96 @@ a, a:hover, a:visited, a:focus {
 }
 
 @media only screen and (max-width: 626px) {
-    .callUs i.icon-m {
-        margin-right: 10px;
+    .innerContent .innerSearch .searchInput {
+        overflow: hidden;
+
+        .input {
+            width: 100px;
+        }
+    }
+
+    .autocomplete-suggestions {
+        left: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .buyingMobile .optionsSelect {
+        line-height: normal !important;
+    }
+
+    html body .innerContent .searchResult.searchResultM .body .tableCon .tableBody .flyItem {
+        .row > div.companyName {
+            min-width: 100px !important;
+            max-width: 100px !important;
+            font-size: 12px;
+            line-height: 17px;
+        }
+
+        .price {
+            font-size: 12px;
+        }
+
+        .hour {
+            font-size: 12px;
+            font-family: sf-semibold;
+        }
+
+        .seatCount {
+            font-size: 11px;
+        }
     }
 
     .callUs {
+        i.icon-m {
+            margin-right: 10px;
+        }
+
         padding: 20px 30px;
-    }
 
-    .callUs div {
-        vertical-align: text-bottom;
-    }
+        div {
+            vertical-align: text-bottom;
 
-    .callUs div .title {
-        font-size: 16px;
-        line-height: 16px
-    }
-
-    .callUs div .text {
-        font-size: 20px;
-    }
-
-    .callUs a {
-        margin-top: 0;
-    }
-
-    .welcomeIcons {
-        .col {
-            width: 100% !important;
-            display: block !important;
-            flex: none;
-
-            div {
-                height: auto !important;
+            .title {
+                font-size: 16px;
+                line-height: 16px;
             }
+
+            .text {
+                font-size: 20px;
+            }
+        }
+
+        a {
+            margin-top: 0;
+        }
+    }
+
+    .welcomeIcons .col {
+        width: 100% !important;
+        display: block !important;
+        flex: none;
+
+        div {
+            height: auto !important;
         }
     }
 
     div.flyItem {
-        > .row > div:last-child {
-            display: none !important;
-        }
+        .detailRow .drowBottom {
+            i {
+                font-size: 9px !important;
+                height: 15px !important;
+                width: 15px !important;
+                line-height: 17px !important;
+            }
 
-        .detailRow .drowBottom i {
-            font-size: 9px !important;
-            height: 15px !important;
-            width: 15px !important;
-            line-height: 17px !important;
-        }
-
-        .detailRow .drowBottom span {
-            font-family: sf-medium !important;
-            width: 80% !important;
-            vertical-align: middle !important;
-            font-size: 12px !important;
+            span {
+                font-family: sf-medium !important;
+                width: 80% !important;
+                vertical-align: middle !important;
+                font-size: 12px !important;
+            }
         }
     }
 }
