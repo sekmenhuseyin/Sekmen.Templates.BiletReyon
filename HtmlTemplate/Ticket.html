@@ -1,18 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@* ReSharper disable UnknownCssClass *@
-@* ReSharper disable MarkupAttributeTypo *@
-@* ReSharper disable MarkupTextTypo *@
-@* ReSharper disable Html.PathError *@
-@{
-    /**/
-
-    Layout = "Inner.cshtml";
-    string ticketId = Request.QueryString["TicketId"];
-}
-@section head
-{
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/15.0.0/css/intlTelInput.css" integrity="sha384-9KPPcayV8JI+A4x2K3zcgr0B/tbGxIOidFfVj83E8F3yMY0uRVEnoGcVVJQ2GT8k" crossorigin="anonymous">
-    <link rel="stylesheet" href="@Functions.GeneratePathWithLastWriteTime("css","card.css")" />
+﻿    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/15.0.0/css/intlTelInput.css" integrity="sha384-9KPPcayV8JI+A4x2K3zcgr0B/tbGxIOidFfVj83E8F3yMY0uRVEnoGcVVJQ2GT8k" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/card.css" />
     <style>
         .paymentOptionTable tbody td {
             padding: 20px;
@@ -115,7 +102,6 @@
                     <tbody>
                         <tr v-for="fdata in returnFlightData.FlightList">
                             <td class="company">
-                                <!--<img src="/assets/images/companies/pegasusIcon.png" alt="pegasusIcon">-->
                                 {{returnFlightData.AirWay}}
                             </td>
                             <td><span class="time">{{fdata.DepartureTime}}</span> <span class="airport">{{fdata.DepartureCity}} ({{fdata.Departure}})</span></td>
@@ -342,10 +328,7 @@
     </section>
 </div>
 
-@section script
-{
-    <script src="@Functions.GeneratePathWithLastWriteTime("Scripts","utils.js")"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/assets/js/utils.js"></script>
     <script>
         var vue = new Vue({
             el: '#ticketVue',
@@ -360,7 +343,7 @@
                 });
                 var w = document.documentElement.clientWidth;
                 if (w < 800)
-                    this.mobile = true
+                    this.mobile = true;
             },
             data:{
                 isLoading:true,
@@ -386,71 +369,6 @@
                         this.mobile = false
 
                 },
-                getFlyInfo:function(){
-                    var vm=this;
-                    var flightInfo ='/DynamicScripts/TicketDetail/json?TicketId=@ticketId';
-
-                    window.axios.get(flightInfo)
-                        .then(function (response) {
-                            vm.flightInfo = response.data;
-                            vm.flightData=response.data.FlightData;
-                            vm.fareList=response.data.FareList;
-                            vm.passList = response.data.Passsengers;
-                            if (response.data.ReturnFlightData.IsReturnFlight == true)
-                                vm.returnFlightData = response.data.ReturnFlightData;
-                            else {
-                                vm.returnFlightData = false;
-                            }
-                        })
-                        .catch(function (error) {
-                            // handle error
-                            console.log(error);
-                        })
-                        .then(function () {
-                            vm.isLoading=false;
-                            vm.passengerInfo();
-                            vm.totalPriceM();
-                        });
-                },
-                getBanks:function(){
-                    var vm=this;
-                    var price = Math.round(vm.flightData.FlightPrice);
-                    var banksUrl ='/DynamicScripts/BankInstallmentList/json?Price='+price;
-
-                    window.axios.get(banksUrl)
-                        .then(function (response) {
-                            vm.banks=response.data;
-                            //console.log(response.data);
-                        })
-                        .catch(function (error) {
-                            // handle error
-                            console.log(error);
-                        })
-                        .then(function () {
-                            vm.isLoading=false;
-                        });
-                },
-                setSelectedBank:function(bank){
-                    this.selectedBank = bank;
-                },
-                setSelectedBankInstallment:function(installment){
-                    this.bankId = installment.BankId;
-                    this.bankInstallmentId = installment.BankInstallmentId;
-                },
-                setBankInstallmentSelect: function (id) {
-
-                    this.bankInstallmentId = id;
-                },
-                passengerInfo: function () {
-/*
-                    var vm=this;
-                     vm.fareList.FareList.forEach(function (val) {
-                       for (i = 0; i < val.PassengerCount; i++) {
-                          vm.pasInfo.push([val.PassengerType,val.PassengerTypeValue,val.PassengerTypeName]);
-                        }
-                       console.warn(this.pasInfo);
-                     });*/
-                },
                 totalPriceM:function(){
                    var that = this;
                     var total = 0;
@@ -459,11 +377,6 @@
                     });
                     that.totalPriceV = total.toFixed(2);
                 }
-            },
-
-            computed: {
             }
-
         });
     </script>
-}
