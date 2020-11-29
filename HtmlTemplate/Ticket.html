@@ -61,7 +61,7 @@
                 <p class="bText">Aşağıda yer alan uçuş bilgileri satın almış olduğunuz bilete aittir. Aynı bilgiler girmiş olduğunuz e-posta adresinize ve telefon numaranıza da gönderilmiştir.</p>
             </div>
             <section class="hMobile" v-if="!mobile">
-                <hr class="mar-b-50" />
+                <hr class="m-b-50" />
                 <h2 class="title"><i class="icon icon-plane3"></i>UÇUŞ BİLGİLERİ</h2>
                 <table class="customTable">
                     <thead>
@@ -112,8 +112,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2 class="title mar-t-50"><i class="icon icon-man2 align-text-top"></i>YOLCU BİLGİLERİ</h2>
-                <div v-for="(n,index) in passList" class="mar-b-20">
+                <h2 class="title m-t-50"><i class="icon icon-man2 align-text-top"></i>YOLCU BİLGİLERİ</h2>
+                <div v-for="(n,index) in passList" class="m-b-20">
                     <table class="customTable">
                         <thead>
                             <tr>
@@ -152,7 +152,7 @@
                         </tbody>
                     </table>
                 </div>
-                <h2 class="title mar-t-50"><i class="icon icon-price"></i>FİYAT BİLGİLERİ</h2>
+                <h2 class="title m-t-50"><i class="icon icon-price"></i>FİYAT BİLGİLERİ</h2>
                 <table class="customTable">
                     <thead>
                         <tr>
@@ -216,7 +216,7 @@
                                 <span class="t1">KALKIŞ</span><br />
                                 <span class="t2">{{fdata.DepartureCity}} - {{fdata.Departure}}</span>
                             </span>
-                            <div class="clear mar-t-10"></div>
+                            <div class="clear m-t-10"></div>
                             <span class="time">{{fdata.ArrivalTime}}</span>
                             <span class="airport">
                                 <span class="t1">KALKIŞ</span><br />
@@ -252,7 +252,7 @@
                                     <span class="t1">KALKIŞ</span><br />
                                     <span class="t2">{{fdata.DepartureCity}} - {{fdata.Departure}}</span>
                                 </span>
-                                <div class="clear mar-t-10"></div>
+                                <div class="clear m-t-10"></div>
                                 <span class="time">{{fdata.ArrivalTime}}</span>
                                 <span class="airport">
                                     <span class="t1">KALKIŞ</span><br />
@@ -268,7 +268,7 @@
 
                 <h2 class="mobileTitleH2">Yolcu Bilgileri</h2>
 
-                <div v-for="(n,index) in passList" class="mar-b-20">
+                <div v-for="(n,index) in passList" class="m-b-20">
                     <div class="customTable infoBox2">
                         <div class="col">
                             {{index+1}}. YOLCU BİLGİLERİ
@@ -317,7 +317,7 @@
                     <div class="col">{{person.TotalPrice}} {{person.Currency}}</div>
 
                 </div>
-                <div class="clearfix infoBox2 mar-t-10">
+                <div class="clearfix infoBox2 m-t-10">
                     <div class="pull-left totalText">TOPLAM FİYAT</div>
                     <div class="pull-right totalNumber">{{totalPriceV}} TRY</div>
                 </div>

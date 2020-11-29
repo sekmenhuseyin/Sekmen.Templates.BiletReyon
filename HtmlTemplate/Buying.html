@@ -20,10 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" rel="stylesheet" />
-    <link href="/assets/plugins/auto-complete.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
     <link href="/assets/css/layout.css" rel="stylesheet" />
 </head>
 <body>
@@ -98,6 +95,194 @@
             </div>
         </div>
 
+        <!-- BODY -->
+        <div class="innerContent">
+            <section>
+                <div class="container bg-white buyingPage">
+                    <h2 class="title"><i class="icon icon-plane3"></i>FLIGHT INFORMATION</h2>
+                    <table class="customTable">
+                        <thead>
+                            <tr>
+                                <th class="text-nowrap">DEPARTURE - 12 DECEMBER 2020 SATURDAY</th>
+                                <th>DEPARTURE</th>
+                                <th>ARRIVAL</th>
+                                <th>FLIGHT NO</th>
+                                <th>CLASS</th>
+                                <th>LUGGAGE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="company">
+                                    <img src="assets/images/companies/pegasusIcon.png">
+                                    Pegasus AIRLINES
+                                </td>
+                                <td><span class="time">15:45</span> <span class="airport">London</span></td>
+                                <td><span class="time">17:15</span> <span class="airport">Toronto</span></td>
+                                <td>XQ9265</td>
+                                <td>R</td>
+                                <td>15 KG</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="customTable">
+                        <thead>
+                            <tr>
+                                <th class="text-nowrap">RETURN - 18 DECEMBER 2020 SUNDAY</th>
+                                <th>DEPARTURE</th>
+                                <th>ARRIVAL</th>
+                                <th>FLIGHT NO</th>
+                                <th>CLASS</th>
+                                <th>LUGGAGE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="company">
+                                    <img src="assets/images/companies/pegasusIcon.png">
+                                    Pegasus AIRLINES
+                                </td>
+                                <td><span class="time">21:45</span> <span class="airport">Toronto</span></td>
+                                <td><span class="time">23:55</span> <span class="airport">London</span></td>
+                                <td>UI98738</td>
+                                <td>K</td>
+                                <td>15 KG</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="title m-t-50"><i class="icon icon-price"></i>PRICE INFORMATION</h2>
+                    <table class="customTable">
+                        <thead>
+                            <tr>
+                                <th class="text-left">PASSENGER</th>
+                                <th class="text-left">PRICE</th>
+                                <th class="text-left">TAX</th>
+                                <th class="text-left">SERVICE FEE</th>
+                                <th class="text-left">TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody class="withTfoot">
+                            <tr>
+                                <td class="text-left percent35">1 ADULT</td>
+                                <td class="text-left">382.99 $</td>
+                                <td class="text-left">74.00 $</td>
+                                <td class="text-left">24.00 $</td>
+                                <td class="text-left total">480.99 $</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th class="text-right no-padding">TOTAL PRICE:</th>
+                                <th class="text-left total">480.99 $</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <h2 class="title m-t-50"><i class="icon icon-man2 align-text-top"></i>PASSENGER INFORMATION</h2>
+
+                    <div class="row m-b-20">
+                        <div class="col-6">
+                            <div class="borderGrey">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <input type="email" name="main" value="" />
+                                    </div>
+                                    <div class="col-7 infoText">
+                                        Your information will be sent to this e-mail.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="borderGrey">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <form>
+                                            <input id="phoneNumber" name="phone" type="tel">
+                                        </form>
+                                    </div>
+                                    <div class="col-7 infoText">
+                                        Your information will be sent to this number.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="customTable">
+                        <thead>
+                            <tr>
+                                <th>1. PASSENGER INFORMATION</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <table class="passengerInfo">
+                        <tr>
+                            <td>
+                                <span>NAME</span>
+                                <input type="text" value="" placeholder="Passenger Name" />
+                            </td>
+                            <td>
+                                <span>SURNAME</span>
+                                <input type="text" value="" placeholder="Passenger Surname" />
+                            </td>
+                            <td style="max-width: 200px;">
+                                <span>BIRTHDATE</span>
+                                <input id="birthdayDate" type="text" value="" placeholder="DD.MM.YYYY" />
+                            </td>
+                            <td>
+                                <span>GENDER</span>
+                                <div class="gender">
+                                    <input type="checkbox" value="" id="manCheck" checked="">
+                                    <label for="manCheck">
+                                        MALE
+                                    </label>
+                                </div>
+                                <div class="gender">
+                                    <input type="checkbox" value="" id="womanCheck">
+                                    <label for="womanCheck">
+                                        FEMALE
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <h2 class="title m-t-50"><i class="icon icon-cc align-text-top"></i>PAYMENT INFORMATION</h2>
+                    <div class="row payment">
+                        <div class="col-6 leftSide">
+                            <form>
+                                <div>
+                                    <input type="text" name="name" placeholder="FULL NAME" />
+                                </div>
+                                <div>
+                                    <input type="text" name="number" placeholder="CARD NUMBER" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <input type="text" name="expiry" placeholder="MM.YYYY" />
+                                    </div>
+                                    <div class="col-4 position-relative">
+                                        <input type="text" name="cvc" maxlength="3" placeholder="CVC2" />
+                                        <i class="fa cvcIcon fa-question-circle" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a class="paymentBtn" href="/loading.html?redirect=/Ticket.html">PAY 480.99$</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-6">
+                            <img class="d-block m-t--60 m-b-15 float-right" src="/assets/images/ccs.png" alt="ccs" />
+                            <div class="card-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
         <!-- BODY -->
 
         <section class="subscribe">
@@ -185,7 +370,7 @@
                             <span class="copyright">COPYRIGHT - 2020</span>
                         </div>
                         <div class="col-md-6">
-                            <div class="pull-right mar-l-30">
+                            <div class="pull-right m-l-30">
                                 <ul class="horizontal social pull-right">
                                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -196,7 +381,7 @@
                             </div>
                             <div class="pull-right line hMobile">&nbsp;</div>
 
-                            <div class="pull-right mar-r-30 hMobile">
+                            <div class="pull-right m-r-30 hMobile">
                                 <span class="footerNumber">
                                     <span class="icon icon-phone"></span>0 (850) 123 45 67
                                 </span>
@@ -208,15 +393,10 @@
         </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
-    <script src="/assets/plugins/auto-complete.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.js" integrity="sha512-gU27kLkXwPNl9tQl3qwD7qv3L4DR7PDf4TkpLYXpF8v6meGMRMNDL9tHuWUIjrdG+ff83QXAM8gFnRX4peq6AQ==" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/default.js"></script>
 </body>
 </html>

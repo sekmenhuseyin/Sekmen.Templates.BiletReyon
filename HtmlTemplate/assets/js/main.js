@@ -20,8 +20,10 @@
     });
 
     var container = $(".passengerArea");
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-        container.hide();
+    if (container.length > 0) {
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.hide();
+        }
     }
 
     $(".passengerBtn").click(function () {
@@ -57,6 +59,10 @@
     $(".closeMobileMenu").on("click", function () {
         $("body").removeClass("activeMenu");
     });
+
+    if ($('.card-wrapper').length > 0) {
+        var card = new Card({ form: '.leftSide form', container: '.card-wrapper' })
+    }
 });
 
 function countTotal() {
